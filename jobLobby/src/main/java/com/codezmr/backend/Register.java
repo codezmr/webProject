@@ -32,9 +32,7 @@ public class Register extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");
-			System.out.println("Connection Created....");
-			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
 			PreparedStatement ps = con.prepareStatement("insert into register values(?,?,?,?,?,?)");
 			ps.setString(1, name2);
 			ps.setString(2, email2);
@@ -45,7 +43,9 @@ public class Register extends HttpServlet {
 			
 			int i = ps.executeUpdate();
 			if(i>0) {
-				out.print("User register successfully.");
+				
+				resp.sendRedirect("profile.jsp");
+				
 			}else {
 				out.print("User register failure.");
 			}
