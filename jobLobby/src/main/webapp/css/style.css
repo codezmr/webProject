@@ -1,0 +1,132 @@
+
+
+html{
+	font-family: 'Nunito', sans-serif;
+	border: 0px;
+	margin: 0px;
+	
+}
+.col-md-1, .col-md-1, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
+	padding: 20px 30px;
+}
+.header_bg{
+	font-family: 'Nunito', sans-serif;
+	 background: linear-gradient(to bottom, #0000cc 0%, #0099ff 100%);
+}
+.logo-text-design{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	
+}
+
+.hyperlinks_design{
+	font-family: 'Nunito', sans-serif;
+	color: yellow;
+	text-decoration: none;
+	
+}
+
+.hyperlinks_design:hover{
+	
+	color: white;
+	text-decoration: underline;
+	
+}
+.menubardiv{
+	font-family: 'Nunito', sans-serif;
+	background: linear-gradient(to bottom, #ffffff 45%, #ccffff 100%);
+}
+
+#mynavbar ul
+{
+	
+	list-style: none;
+	
+}
+
+#mynavbar ul li
+{
+	float: left;
+	padding: 10px
+}
+ 
+#mynavbar ul li a
+{
+	font-family: 'Nunito', sans-serif;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+#mynavbar ul li a:hover
+{
+	color: red;
+	text-decoration: none;
+}
+
+.gray{
+	
+ background-color: gray;	
+
+}
+.black{
+	background-color: black;
+}
+
+#footermenubar ul li a
+{
+	font-family: 'Nunito', sans-serif;
+	color: white;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.textfield_design{
+	font-family: 'Nunito', sans-serif;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	width: 300px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.textfield_design:focus{
+	 background-color: #f2f2f2;
+	 outline: none;
+     border-color: #0000ff;
+     box-shadow: 0 0 10px #0000ff;
+}
+.select_option{
+	font-family: 'Nunito', sans-serif;
+	padding: 5px 10px;
+	width: 200px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+.jab_search_div{
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	box-shadow: 0 0 2px #ff0000, 0 0 5px #0000ff;
+	border-radius: 5px;
+    margin-top: 15px;
+}
+.display_job_div{
+	font-family: 'Nunito', sans-serif;
+	border: 1px solid gray;
+	margin-top: 10px;
+}
+
+.reg_div_design{
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	border-radius: 10px;
+	background: rgb(0,70,238);
+	background: linear-gradient(0deg, rgba(0,70,238,1) 0%, rgba(213,250,248,0.9396709367340687) 39%);
+	
+	-webkit-box-shadow:  3px 3px 5px 6px #ccc; 
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	 box-shadow:         3px 3px 5px 6px #ccc;
+	  
+
+}
