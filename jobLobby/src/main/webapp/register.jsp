@@ -13,78 +13,78 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     	
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
-    	
-    	<script type="text/javascript">
-    		
-    	  function val(v){
-    		  document.getElementById(v).innerHTML= "";
-    		 
-    	  }
-    	
-    	  function validation() 
-    	  {
-    		var flag = false;
-			var name2 = document.regform.name1.value;
-			var email2 = document.regform.email1.value;
-			var pass2 = document.regform.pass1.value;
-			var gender2 = document.regform.gender1.value;
-			var fields2 = document.regform.field1.value;
-			var city2= document.regform.city1.value;
+		<script type="text/javascript">
+		
+		 function val(v)
+         {
+             document.getElementById(v).innerHTML="";
+         }
+		 
+         function validation()
+         {
+             var flag=true;
+             
+             var name2=document.regform.name1.value;
+             var email2=document.regform.email1.value;
+             var pass2=document.regform.pass1.value;
+             var gender2=document.regform.gender1.value;
+             var city2=document.regform.city1.value;
+             
+			 var name_pattern=/^[a-zA-Z]{3,30}$/;
+             var email_pattern = /^([a-zA-Z0-9])(([a-zA-Z0-9])*([\._\+-])*([a-zA-Z0-9]))*@(([a-zA-Z0-9\-])+(\.))+([a-zA-Z]{2,4})+$/;
+             var password_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 			
-			if(name2 === ""){
-				document.getElementById('name_error').innerHTML= "<br>Name can not be empty.";
-				flag = false;
+             
+	               if(!name2.match(name_pattern)){
+	            	 
+	            	 document.getElementById('name_error').innerHTML = "<br>Name format is wrong";
+	             		flag = false;
+	             	}
+	               if(name2==="")
+	                {
+	                    document.getElementById('name_error').innerHTML="<br>Name cannot be empty";
+	                    flag=false;
+	                }
+
+	                if(!email2.match(email_pattern))
+	                {
+	                    document.getElementById('email_error').innerHTML="<br>Email is not properly formatted";
+	                    flag=false;
+	                }
+	                if(email2==="")
+	                {
+	                    document.getElementById('email_error').innerHTML="<br>Email cannot be empty";
+	                    flag=false;
+	                }
+	                
+	                if(!pass2.match(password_pattern))
+	                {
+	                    document.getElementById('password_error').innerHTML="<br>Password is not properly formatted (should contain 0-9,special characters)";
+	                    flag=false;
+	                }
+	                if(pass2==="")
+	                {
+	                    document.getElementById('password_error').innerHTML="<br>Password cannot be empty";
+	                    flag=false;
+	                }
+	                
+	                if(gender2==="")
+	                {
+	                    document.getElementById('gender_error').innerHTML="<br>Please select gender";
+	                    flag=false;
+	                }
+	                
+	                if(city2==="Select City")
+	                {
+	                    document.getElementById('city_error').innerHTML="<br>Please select the city";
+	                    flag=false;
+	                }
+	             return flag;
 			}
-			 else if(email2 === ""){
-					document.getElementById('email_error').innerHTML= "<br>Email Id can not be empty.";
-					flag = false;
-			}
-			 else if(pass2 === ""){
-					document.getElementById('password_error').innerHTML= "<br> Password can not be empty.";
-					flag = false;
-			}
-			 else if(gender2 === ""){
-					document.getElementById('gender_error').innerHTML= "<br>Please select gender.";
-					flag = false;
-			}
-			 else if(city2 === "Select City"){
-					document.getElementById('city_error').innerHTML= "<br>Please select city.";
-					flag = false;
-			} 
-			return flag;
 			
-			
-			//=========================
-			/* if(name2 === ""){
-				alert("Name cannot be empty!!");
-				return false;
-			}
-			 else if(email2 === ""){
-				 alert("Email cannot be empty!!");
-				 return false;
-			}
-			 else if(pass2 === ""){
-				 alert("Password cannot be empty!!");
-				 return false;
-			}
-			 else if(gender2 === ""){
-				 alert("Please select gender.");
-				 return false;
-			}
-			 else if(city2 === "Select City"){
-				 alert("Please select the city.");
-				 return false;
-			} 
-			 else if(fields2 === ""){
-				 alert("Please select atleast one field.");
-				 return false;
-			} else{
-				document.regform.action="reg";
-				document.regform.submit();
-			} */
-			
-		  }
-    	</script>
+		
+		</script>
+
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -95,35 +95,42 @@
 				<div class="col-md-3"></div>
 				<div class="col-md-6 reg_div_design ">
 				
-					<form method="POST" name="regform" onsubmit="return validation()" action="reg">
-					          <!-- client side validation
-					              when click on submit so first check validation() return value
-					          		if return true so continue next page 
-					          		else show error messages.
-					          -->
+					<form method="POST" name="regform"  onsubmit="return validation()" action="reg" >
+					          
 					         
 						<h2>Register Form</h2><br>
-						<input type="text" placeholder="Name" name="name1" class="textfield_design" onkeypress="val('name_error')" /><small><span id="name_error" style="color:red;" ></span></small><br>
-						<input type="email" placeholder="Email" name="email1" class="textfield_design"/><small><span id="email_error" style="color:red;"></span></small><br>
-						<input type="password" placeholder="Password" name="pass1" class="textfield_design" /><small><span id="password_error" style="color:red;"></span></small><br><br>
+						<input type="text" placeholder="Name" name="name1" class="textfield_design" onkeyup="val('name_error')"/>
+							<sup><span id="name_error" style="color: red"> </span></sup>
+						<br>
+						
+						<input type="email" placeholder="Email" name="email1" class="textfield_design" onkeyup="val('email_error')" />
+							<sup><span id="email_error" style="color: red"> </span></sup>
+						<br>
+						
+						<input type="password" placeholder="Password" name="pass1" class="textfield_design" onkeyup="val('password_error')" />
+							<sup><span id="password_error" style="color: red"> </span></sup>
+						<br><br>
 						
 						<b>Select Gender</b><br>
 						<input type="radio" name="gender1" value="Male" class=""/> Male
-						<input type="radio" name="gender1" value="Female"/> Female <small><span id="gender_error" style="color:red;"></span></small><br><br>
+						<input type="radio" name="gender1" value="Female"/> Female 
+							<sup><span id="gender_error" style="color: red"> </span></sup>
+						<br><br>
 						
 						<b>Select Field</b><br>
 						<input type="checkbox" name="field1" value="Infrmation Technology"/> Information Technology <br>
 						<input type="checkbox" name="field1" value="Marketing"/> Marketing
 						<input type="checkbox" name="field1" value="Finance"/> Finance<br><br>
 						
-						<select name="city1" class="select_option">
-						    <option>Select City</option>
-							<option value="Munger">Munger</option>
-							<option value="Gaya">Gaya</option>
-							<option value="Darbhanga">Darbhanga</option>
-							<option value="Patna">Patna</option>
-							<option value="Bhagalpur">Bhagalpur</option>
-						</select><small><span id="city_error" style="color:red;"></span></small>
+						<select name="city1" class="select_option" >
+						    <option value="">Select City</option>
+							<option value="Munger">MUNGER</option>
+							<option value="Gaya">GAYA</option>
+							<option value="Darbhanga">DARBHANGA</option>
+							<option value="Patna">PATANA</option>
+							<option value="Bhagalpur">BHAGALPUR</option>
+						</select>
+						<sup><span id="city_error" style="color: red"> </span></sup>
 						<br><br>
 						
 						<input type="submit" value="Register" class="btn btn-primary"/><br>
