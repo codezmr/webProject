@@ -6,6 +6,21 @@
 	                    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		id="WebApp_ID" version="3.0">
 
+	
+		<!-- ======== Filter Mapping ======== -->
+		
+		<filter>
+			<filter-name>valfilterdemo</filter-name>
+			<filter-class>com.codezmr.filters.ValidationFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			
+			<filter-name>valfilterdemo</filter-name>
+			<url-pattern>/reg</url-pattern>
+		
+		</filter-mapping>
+		
+		
 		<!-- ======== Register Mapping ======== -->
 		<servlet>
 			<servlet-name>regdemo</servlet-name>
@@ -29,4 +44,5 @@
 			<url-pattern>/login</url-pattern>
 		</servlet-mapping>
 
+	   
 	</web-app>

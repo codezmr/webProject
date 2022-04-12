@@ -24,6 +24,7 @@ public class Register extends HttpServlet {
 		String pass2 = req.getParameter("pass1");
 		String gender2 = req.getParameter("gender1");
 		String[] field2 = req.getParameterValues("field1");
+		
 			String fields2 = "";
 			for(String s: field2) {
 				fields2 = fields2 + s + ",";
