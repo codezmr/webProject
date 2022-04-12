@@ -28,7 +28,7 @@
              var email2=document.regform.email1.value;
              var pass2=document.regform.pass1.value;
              var gender2=document.regform.gender1.value;
-             var city2=document.regform.city1.value;
+             var city2 =document.regform.city1.value;
              
 			 var name_pattern=/^[a-zA-Z]{3,30}$/;
              var email_pattern = /^([a-zA-Z0-9])(([a-zA-Z0-9])*([\._\+-])*([a-zA-Z0-9]))*@(([a-zA-Z0-9\-])+(\.))+([a-zA-Z]{2,4})+$/;
@@ -73,12 +73,7 @@
 	                    document.getElementById('gender_error').innerHTML="<br>Please select gender";
 	                    flag=false;
 	                }
-	                
-	                if(city2==="Select City")
-	                {
-	                    document.getElementById('city_error').innerHTML="<br>Please select the city";
-	                    flag=false;
-	                }
+	              
 	             return flag;
 			}
 			
@@ -122,7 +117,7 @@
 						<input type="checkbox" name="field1" value="Marketing"/> Marketing
 						<input type="checkbox" name="field1" value="Finance"/> Finance<br><br>
 						
-						<select name="city1" class="select_option" >
+						<select name="city1" class="select_option" required>
 						    <option value="">Select City</option>
 							<option value="Munger">MUNGER</option>
 							<option value="Gaya">GAYA</option>
@@ -130,7 +125,6 @@
 							<option value="Patna">PATANA</option>
 							<option value="Bhagalpur">BHAGALPUR</option>
 						</select>
-						<sup><span id="city_error" style="color: red"> </span></sup>
 						<br><br>
 						
 						<input type="submit" value="Register" class="btn btn-primary"/><br>
