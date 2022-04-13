@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<jsp:scriptlet>
+ 	String name   = (String) session.getAttribute("session_name");
+ 	String gender = (String) session.getAttribute("session_gender");
+ 	String city   = (String) session.getAttribute("session_city");
+ 	String field  = (String) session.getAttribute("session_field");
+</jsp:scriptlet>
+<jsp:scriptlet>
+		
+		if(name == null || name.equals("")){
+			response.sendRedirect("login.jsp");
+		}
+	</jsp:scriptlet>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,17 +29,17 @@
    
 	</head>
 	<body>
-	  <jsp:include page="header.jsp"></jsp:include>
+	  <jsp:include page="profile_header.jsp"></jsp:include>
 	  <jsp:include page="menubar.jsp"></jsp:include>
 	  
 	     <!-- Get Value from session object --> 
 	  
-	  <jsp:scriptlet>
-	  	
-	 	 String name = (String) session.getAttribute("session_name");
-	  </jsp:scriptlet>
+	  
 	  
 	  WELCOME : <jsp:expression> name </jsp:expression>
+	  Gender  : <jsp:expression> gender </jsp:expression>
+	  City    : <jsp:expression> city </jsp:expression>
+	  Fields  : <jsp:expression> field </jsp:expression>
 	  
 	  <jsp:include page="footer.jsp"></jsp:include>
 	</body>

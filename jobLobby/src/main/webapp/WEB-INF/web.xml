@@ -44,5 +44,14 @@
 			<url-pattern>/login</url-pattern>
 		</servlet-mapping>
 
-	   
+	   	<!-- ======== Logout Mapping ======== -->
+		<servlet>
+			<servlet-name>logoutdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.Logout</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>logoutdemo</servlet-name>
+			<url-pattern>/Logout</url-pattern>
+		</servlet-mapping>
 	</web-app>
