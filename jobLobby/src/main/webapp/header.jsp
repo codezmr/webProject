@@ -11,7 +11,7 @@
 
 	   	 <div class="col-md-9">
 	   	     <img alt="" src="images/logo.png" height="50">
-	   		 <span class="logo-text-design">Job Lobby</span>
+	   		 <span class="header-text-design">Job Lobby</span>
 	   	 </div>
 	   	   
 	   	 <div class="col-md-3">

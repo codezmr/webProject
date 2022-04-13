@@ -13,12 +13,17 @@ html{
 	font-family: 'Nunito', sans-serif;
 	 background: linear-gradient(to bottom, #0000cc 0%, #0099ff 100%);
 }
-.logo-text-design{
+.header-text-design{
 	font-family: 'Nunito', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
 	color: white;
+	text-decoration: none;
 	
+}
+
+.header-text-design:hover{
+	color: #eeeeee;
 }
 
 .hyperlinks_design{
@@ -130,3 +135,13 @@ html{
 	  
 
 }
+
+
+.profile_text_color{
+	color: #acaaaa;
+}
+
+
+
+
+

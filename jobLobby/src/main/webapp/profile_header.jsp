@@ -10,19 +10,19 @@
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title> Welcome : <jsp:expression> name </jsp:expression> </title>
+        <title> Welcome : <jsp:expression> name.toUpperCase() </jsp:expression> </title>
     </head>
     <body>
-        <div class="row header_bg">
+        <div class="row header_bg" >
             <div class="col-md-4">
-                <img src="images/smartprogramminglogo.png" height="50" />
-                <span class="logo_text_design"> Job Portal </span>
+                <img src="images/logo.png" height="50" />
+                <span class="header-text-design"> Job Portal </span>
             </div>
-            <div class="col-md-6">
-                <span style="color: yellow"> Welcome : <a href="Profile.jsp"> <jsp:expression> name </jsp:expression> </a> </span>
+            <div class="col-md-4" style="text-align:center;" >
+                <span style="color: yellow" > Welcome : <a href="Profile.jsp" class="header-text-design"> <jsp:expression> name.toUpperCase() </jsp:expression> </a> </span>
             </div>
-            <div class="col-md-2">
-                <a href="Logout" class="hyperlinks_design"> Logout </a>
+            <div class="col-md-4" style="text-align:right;" >
+                <a href="Logout" class="header-text-design" > Logout </a>
             </div>
         </div>
     </body>
