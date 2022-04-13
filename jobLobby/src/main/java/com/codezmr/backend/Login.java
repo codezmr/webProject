@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Login extends HttpServlet{
 	
@@ -25,6 +26,8 @@ public class Login extends HttpServlet{
 		String pass2 = req.getParameter("pass1");
 		String remme2 = req.getParameter("rememberme1");
 		
+		String name2="", gender2="", city2="", field2="" ;
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");
@@ -36,7 +39,21 @@ public class Login extends HttpServlet{
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
+				
+				name2 = rs.getString("name");
+				gender2 = rs.getString("gender");
+				city2 = rs.getString("city");
+				field2 = rs.getString("field");
+				
+				HttpSession session = req.getSession();
+				session.setAttribute("session_name", name2);
+				session.setAttribute("session_gender", gender2);
+				session.setAttribute("session_city", city2);
+				session.setAttribute("session_field", field2);
+				
 				resp.sendRedirect("profile.jsp");
+				
+				
 			}else {
 				
 				//resp.sendRedirect("login.jsp");
