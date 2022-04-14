@@ -2,7 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 
 <jsp:scriptlet>
- 	String name   = (String) session.getAttribute("session_name");
+	String name   = (String) session.getAttribute("session_name");
+	String gender = (String) session.getAttribute("session_gender");
+	String city   = (String) session.getAttribute("session_city");
+	String title  = (String) session.getAttribute("session_title");
+	String skills = (String) session.getAttribute("session_skills");
  	
 </jsp:scriptlet>
 <jsp:scriptlet>
@@ -41,6 +45,13 @@
 	   		<div class="col-md-10">
 	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression>
 	   			<span style="font-size:12px; ">{<a href="edit_profile_about.jsp"  style="text-decoration: none; ">Edit Details</a>}</span></h3>
+	   		
+	   			<span class="profile_text_color">Title : </span><jsp:expression>title</jsp:expression><br>
+	   			<span class="profile_text_color">Skills : </span><jsp:expression>skills</jsp:expression><br><br>
+	   			
+	   			<span class="profile_text_color">Gender : </span> <jsp:expression>gender</jsp:expression> <br>
+	   			<span class="profile_text_color">City : </span> <jsp:expression>city</jsp:expression><br>
+	   			
 	   		</div>
 	   	</div>
 	   	

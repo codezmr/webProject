@@ -7,16 +7,15 @@
  	String gender = (String) session.getAttribute("session_gender");
  	String city   = (String) session.getAttribute("session_city");
  	String title  = (String) session.getAttribute("session_title");
+    String skills  = (String) session.getAttribute("session_skills");
 
-		
-		if(name == null || name.equals("")){
-			response.sendRedirect("login.jsp");
-		}
-		
 		if(title == null || title.equals("")){
 			title = "";
-		}
-		
+		} 
+		if(skills == null || skills.equals("")){
+			skills = "";
+		} 
+	
 </jsp:scriptlet>
 <!DOCTYPE html>
 <html>
@@ -51,10 +50,8 @@
 					 		<input type="text"  value="<jsp:expression>name</jsp:expression>" name="name1" class="textfield_design" />
 					 		<input type="text"  value="<jsp:expression>gender</jsp:expression>" name="gender1" class="textfield_design" />
 					 		<input type="text"  value="<jsp:expression>city</jsp:expression>" name="city1" class="textfield_design" />
-					 		<input type="text"  value="<jsp:expression>title</jsp:expression>" name="title1" class="textfield_design" placeholder="Profile Title" />
-							
-							<textarea rows="5" cols="7" placeholder="Skills" name="skills1" class="textfield_design" ></textarea>
-							
+					 		<input type="text"  value="<jsp:expression>title</jsp:expression>" name="title1" class="textfield_design" placeholder="Profile Title" />							
+							<textarea rows="5" cols="7" placeholder="Skills" value="<jsp:expression>skills</jsp:expression>" name="skills1" class="textfield_design" ></textarea>
 							
 							<input type="submit" value="Update"  class="btn btn-danger"/>
 					 	</form>		

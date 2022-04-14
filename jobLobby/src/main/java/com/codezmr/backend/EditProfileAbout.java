@@ -28,7 +28,7 @@ public class EditProfileAbout extends HttpServlet{
 		String name2 = req.getParameter("name1");
 		String city2 = req.getParameter("city1");
 		String gender2 = req.getParameter("gender1");
-		String title2 = req.getParameter("title");
+		String title2 = req.getParameter("title1");
 		String skills2 = req.getParameter("skills1");
 		
 		try {
@@ -48,7 +48,18 @@ public class EditProfileAbout extends HttpServlet{
 			ps2.setString(3, email2);
 			int i2 = ps1.executeUpdate();
 			
+			
 			if(i1>0 && i2>0) {
+				
+				
+				session.setAttribute("session_name", name2);
+				session.setAttribute("session_email", email2);
+				session.setAttribute("session_gender", gender2);
+				session.setAttribute("session_city", city2);
+				
+				session.setAttribute("session_title", title2);
+				session.setAttribute("session_skills", skills2);
+				
 				
 				resp.sendRedirect("profile.jsp");
 				

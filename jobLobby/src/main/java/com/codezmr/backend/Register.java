@@ -61,6 +61,9 @@ public class Register extends HttpServlet {
 				session.setAttribute("session_city", city2);
 				session.setAttribute("session_field", field2);
 				
+				session.setAttribute("session_title", "");
+				session.setAttribute("session_skills", "");
+				
 				resp.sendRedirect("profile.jsp");
 				
 			}else {

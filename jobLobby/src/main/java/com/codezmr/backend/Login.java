@@ -52,6 +52,19 @@ public class Login extends HttpServlet{
 				session.setAttribute("session_city", city2);
 				session.setAttribute("session_field", field2);
 				
+				String title = "", skills = "";
+				PreparedStatement ps2 = con.prepareStatement("select * from about_user where email=?");
+				ps2.setString(1, email2);
+				
+				ResultSet rs2 = ps2.executeQuery();
+				while(rs2.next()) {
+					title = rs2.getString("about");
+					skills = rs2.getString("skills");
+				}
+				
+				session.setAttribute("session_title", title);
+				session.setAttribute("session_skills", skills);
+				
 				resp.sendRedirect("profile.jsp");
 				
 				
