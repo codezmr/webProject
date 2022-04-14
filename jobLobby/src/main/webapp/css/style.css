@@ -99,8 +99,9 @@ html{
 	 background-color: #f2f2f2;
 	 outline: none;
      border-color: #0000ff;
-     box-shadow: 0 0 10px #0000ff;
+     box-shadow: 0 0 3px #0000ff;
 }
+
 .select_option{
 	font-family: 'Nunito', sans-serif;
 	padding: 5px 10px;
@@ -126,7 +127,6 @@ html{
 	font-family: 'Nunito', sans-serif;
 	text-align: center;
 	border-radius: 10px;
-	background: rgb(0,70,238);
 	background: linear-gradient(0deg, rgba(0,70,238,1) 0%, rgba(213,250,248,0.9396709367340687) 39%);
 	
 	-webkit-box-shadow:  3px 3px 5px 6px #ccc; 
@@ -135,6 +135,8 @@ html{
 	  
 
 }
+
+
 
 
 .profile_text_color{

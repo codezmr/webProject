@@ -54,4 +54,17 @@
 			<servlet-name>logoutdemo</servlet-name>
 			<url-pattern>/Logout</url-pattern>
 		</servlet-mapping>
+		
+		  	<!-- ======== EditProfileAbout Mapping ======== -->
+		<servlet>
+			<servlet-name>epademo</servlet-name>
+			<servlet-class>com.codezmr.backend.EditProfileAbout</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>epademo</servlet-name>
+			<url-pattern>/editProfileAbout</url-pattern>
+		</servlet-mapping>
+		
+		
 	</web-app>

@@ -30,7 +30,7 @@
              var gender2=document.regform.gender1.value;
              var city2 =document.regform.city1.value;
              
-			 var name_pattern=/^[a-zA-Z]{3,30}$/;
+			 var name_pattern=/^[a-zA-Z ]{3,30}$/;
              var email_pattern = /^([a-zA-Z0-9])(([a-zA-Z0-9])*([\._\+-])*([a-zA-Z0-9]))*@(([a-zA-Z0-9\-])+(\.))+([a-zA-Z]{2,4})+$/;
              var password_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 			

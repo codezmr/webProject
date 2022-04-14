@@ -3,9 +3,7 @@
 
 <jsp:scriptlet>
  	String name   = (String) session.getAttribute("session_name");
- 	String gender = (String) session.getAttribute("session_gender");
- 	String city   = (String) session.getAttribute("session_city");
- 	String field  = (String) session.getAttribute("session_field");
+ 	
 </jsp:scriptlet>
 <jsp:scriptlet>
 		
@@ -36,22 +34,20 @@
 	  <div class="row">
 	   <div class="col-md-2"></div>
 	   <div class="col-md-8">
-	   	<div class="row">
-	   		<div class="col-md-2">
+	   	<div class="row " style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 5px gray;">
+	   		<div class="col-md-2" >
 	   			<img alt="" src="images/logo.png" height="100" style="border-radius: 50%"/>
 	   		</div>
 	   		<div class="col-md-10">
-	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression></h3>
-	   			<span class="profile_text_color">Gender : </span> <jsp:expression>gender</jsp:expression> <br>
-	   			<span class="profile_text_color">City : </span> <jsp:expression>city</jsp:expression><br>
-	   			<span class="profile_text_color">Fields : </span> <jsp:expression>field</jsp:expression><br>
+	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression>
+	   			<span style="font-size:12px; ">{<a href="edit_profile_about.jsp"  style="text-decoration: none; ">Edit Details</a>}</span></h3>
 	   		</div>
 	   	</div>
 	   	
 	   	<div class="row">
 	   		<div class="col-md-2"></div>
 	   		<div class="col-md-10">
-	   			<h5>Education Details <span style="font-size:12px; "><a href="edit_details.jsp"  style="text-decoration: none; ">{ Edit Details }</a></span></h5>
+	   			<h5>Education Details <span style="font-size:12px; ">{<a href="edit_details.jsp"  style="text-decoration: none; ">Edit Details</a>}</span></h5>
 	   			School : <br>
 	   			Year : <br>
 	   			College : <br>

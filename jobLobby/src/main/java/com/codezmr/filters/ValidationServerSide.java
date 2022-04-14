@@ -11,7 +11,7 @@ public class ValidationServerSide
 	
 	private Matcher matcher;
 	
-	private static final String NAME_PATTERN = "^[A-Za-z]{3,30}";
+	private static final String NAME_PATTERN = "^[A-Za-z ]{3,30}";
 	private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z-]+(\\.[A-Za-z]+)*(\\.[A-Za-z]{2,3})$";
     private static final String PASS_PATTERN="^[A-Za-z0-9@#_]{6,16}$";
     

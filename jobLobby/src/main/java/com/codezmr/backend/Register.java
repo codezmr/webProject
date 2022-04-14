@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Register extends HttpServlet {
 	
@@ -34,16 +35,31 @@ public class Register extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
-			PreparedStatement ps = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
-			ps.setString(1, name2);
-			ps.setString(2, email2);
-			ps.setString(3, pass2);
-			ps.setString(4, gender2);
-			ps.setString(5, fields2);
-			ps.setString(6, city2);
+			PreparedStatement ps1 = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
+			ps1.setString(1, name2);
+			ps1.setString(2, email2);
+			ps1.setString(3, pass2);
+			ps1.setString(4, gender2);
+			ps1.setString(5, fields2);
+			ps1.setString(6, city2);
+			int i1 = ps1.executeUpdate();
 			
-			int i = ps.executeUpdate();
-			if(i>0) {
+			PreparedStatement ps2 = con.prepareStatement("insert into about_user(email, about, skills) values(?,?,?)");
+			ps2.setString(1, email2);
+			ps2.setString(2, "");
+			ps2.setString(3, "");
+			int i2 = ps2.executeUpdate();
+			
+			
+			
+			if(i1>0 && i2>0) {
+				
+				HttpSession session = req.getSession();
+				session.setAttribute("session_name", name2);
+				session.setAttribute("session_email", email2);
+				session.setAttribute("session_gender", gender2);
+				session.setAttribute("session_city", city2);
+				session.setAttribute("session_field", field2);
 				
 				resp.sendRedirect("profile.jsp");
 				
