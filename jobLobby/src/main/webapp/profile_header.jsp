@@ -19,7 +19,7 @@
                 <span class="header-text-design"> Job Portal </span>
             </div>
             <div class="col-md-4" style="text-align:center;" >
-                <span style="color: yellow" > Welcome : <a href="Profile.jsp" class="header-text-design"> <jsp:expression> name.toUpperCase() </jsp:expression> </a> </span>
+                <span style="color: yellow" > Welcome : <a href="profile.jsp" class="header-text-design"> <jsp:expression> name.toUpperCase() </jsp:expression> </a> </span>
             </div>
             <div class="col-md-4" style="text-align:right;" >
                 <a href="Logout" class="header-text-design" > Logout </a>

@@ -44,20 +44,24 @@
 	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression></h3>
 	   			<table>
 	   				<tr>
-	   			     <td><span class="profile_text_color">Gender :</span></td>
+	   			     <td><span class="profile_text_color">Gender</span></td>
 	   			     <td><input type="text" value="<jsp:expression>gender</jsp:expression>" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   			     <td><span class="profile_text_color">City :</span></td>
+	   			     <td><span class="profile_text_color">City</span></td>
 	   			     <td><input type="text" value="<jsp:expression>city</jsp:expression>" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   			     <td><span class="profile_text_color">Fields :</span></td>
+	   			     <td><span class="profile_text_color">Fields</span></td>
 	   			     <td><input type="text" value="<jsp:expression>field</jsp:expression>" class="textfield_design"/></td>
 	   				</tr>
 	   				
+	   				<tr>
+	   				  <td></td>
+	   				  <td><input type="submit" value="Update" class="btn btn-danger" /></td>
+	   				</tr>
 	   			</table>
 	   			
 	   		</div>
@@ -69,27 +73,27 @@
 	   			<h5>Education Details <span style="font-size:12px; "></span></h5>
 	   			<table>
 	   				<tr>
-	   				 <td>School : </td>
+	   				 <td>School</td>
 	   				 <td><input type="text" value="" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   				 <td>Year : </td>
+	   				 <td>Year</td>
 	   				 <td><input type="text" value="" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   				 <td>College : </td>
+	   				 <td>College</td>
 	   				 <td><input type="text" value="" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   				 <td>Passing Year : </td>
+	   				 <td>Passing Year</td>
 	   				 <td><input type="text" value="" class="textfield_design"/></td>
 	   				</tr>
 	   				
 	   				<tr>
-	   				 <td>Experience : </td>
+	   				 <td>Experience</td>
 	   				 <td><input type="text" value="" class="textfield_design"/></td>
 	   				</tr>
 	   			</table>
@@ -101,7 +105,7 @@
 	   	<div class="row" style="background-color: #ececec">
 	   		<div class="col-md-2"></div>
 	   		<div class="col-md-8">
-	   			<input type="submit" value="Update" />
+	   			<input type="submit" value="Update" class="btn btn-danger" />
 	   		</div>
 	   		<div class="col-md-2"></div>
 	   	</div>
