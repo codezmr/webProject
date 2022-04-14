@@ -42,22 +42,58 @@
 	   		</div>
 	   		<div class="col-md-10">
 	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression></h3>
-	   			<span class="profile_text_color">Gender : </span> <jsp:expression>gender</jsp:expression> <br>
-	   			<span class="profile_text_color">City : </span> <jsp:expression>city</jsp:expression><br>
-	   			<span class="profile_text_color">Fields : </span> <jsp:expression>field</jsp:expression><br>
+	   			<table>
+	   				<tr>
+	   			     <td><span class="profile_text_color">Gender :</span></td>
+	   			     <td><input type="text" value="<jsp:expression>gender</jsp:expression>" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   			     <td><span class="profile_text_color">City :</span></td>
+	   			     <td><input type="text" value="<jsp:expression>city</jsp:expression>" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   			     <td><span class="profile_text_color">Fields :</span></td>
+	   			     <td><input type="text" value="<jsp:expression>field</jsp:expression>" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   			</table>
+	   			
 	   		</div>
 	   	</div>
 	   	
 	   	<div class="row">
 	   		<div class="col-md-2"></div>
 	   		<div class="col-md-10">
-	   			<h5>Education Details <span style="font-size:12px; "><a href=""  style="text-decoration: none; ">{ Edit Details }</a></span></h5>
-	   			School : <br>
-	   			Year : <br>
-	   			College : <br>
-	   			Passing Year : <br>
-	   			Experience : <br>
-	   		</div>
+	   			<h5>Education Details <span style="font-size:12px; "></span></h5>
+	   			<table>
+	   				<tr>
+	   				 <td>School : </td>
+	   				 <td><input type="text" value="" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   				 <td>Year : </td>
+	   				 <td><input type="text" value="" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   				 <td>College : </td>
+	   				 <td><input type="text" value="" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   				 <td>Passing Year : </td>
+	   				 <td><input type="text" value="" class="textfield_design"/></td>
+	   				</tr>
+	   				
+	   				<tr>
+	   				 <td>Experience : </td>
+	   				 <td><input type="text" value="" class="textfield_design"/></td>
+	   				</tr>
+	   			</table>
+		   	</div>
 	   		
 	   	
 	   	</div>
@@ -65,7 +101,7 @@
 	   	<div class="row" style="background-color: #ececec">
 	   		<div class="col-md-2"></div>
 	   		<div class="col-md-8">
-	   			<input type="submit" value="Follow" />
+	   			<input type="submit" value="Update" />
 	   		</div>
 	   		<div class="col-md-2"></div>
 	   	</div>

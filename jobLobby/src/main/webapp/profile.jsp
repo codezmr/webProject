@@ -51,7 +51,7 @@
 	   	<div class="row">
 	   		<div class="col-md-2"></div>
 	   		<div class="col-md-10">
-	   			<h5>Education Details <span style="font-size:12px; "><a href=""  style="text-decoration: none; ">{ Edit Details }</a></span></h5>
+	   			<h5>Education Details <span style="font-size:12px; "><a href="edit_details.jsp"  style="text-decoration: none; ">{ Edit Details }</a></span></h5>
 	   			School : <br>
 	   			Year : <br>
 	   			College : <br>
