@@ -6,6 +6,12 @@ html{
 	margin: 0px;
 	
 }
+
+.icon_style{
+	font-size: 12px;
+	float: right;
+}
+
 .col-md-1, .col-md-1, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
 	padding: 20px 30px;
 }

@@ -67,4 +67,16 @@
 		</servlet-mapping>
 		
 		
+			<!-- ======== AddProfileEducation Mapping ======== -->
+		<servlet>
+			<servlet-name>apedemo</servlet-name>
+			<servlet-class>com.codezmr.backend.AddProfileEducation</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>apedemo</servlet-name>
+			<url-pattern>/addProfileEducation</url-pattern>
+		</servlet-mapping>
+		
+		
 	</web-app>
