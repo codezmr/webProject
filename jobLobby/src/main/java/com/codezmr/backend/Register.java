@@ -51,7 +51,6 @@ public class Register extends HttpServlet {
 			int i2 = ps2.executeUpdate();
 			
 			
-			
 			if(i1>0 && i2>0) {
 				
 				HttpSession session = req.getSession();

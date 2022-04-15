@@ -46,7 +46,7 @@ public class EditProfileAbout extends HttpServlet{
 			ps2.setString(1, title2);
 			ps2.setString(2, skills2);
 			ps2.setString(3, email2);
-			int i2 = ps1.executeUpdate();
+			int i2 = ps2.executeUpdate();
 			
 			
 			if(i1>0 && i2>0) {
