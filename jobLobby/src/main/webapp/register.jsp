@@ -13,6 +13,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     	
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
+		
+		<script src="javascripts/cities.js"></script>
+		
 		<script type="text/javascript">
 		
 		 function val(v)
@@ -117,14 +120,12 @@
 						<input type="checkbox" name="field1" value="Marketing"/> Marketing
 						<input type="checkbox" name="field1" value="Finance"/> Finance<br><br>
 						
-						<select name="city1" class="select_option" required>
-						    <option value="">Select City</option>
-							<option value="Munger">MUNGER</option>
-							<option value="Gaya">GAYA</option>
-							<option value="Darbhanga">DARBHANGA</option>
-							<option value="Patna">PATANA</option>
-							<option value="Bhagalpur">BHAGALPUR</option>
-						</select>
+						
+						<!-- =========Select State and City using JavaScript =============  -->
+						
+						<select onchange="print_city('state', this.selectedIndex);" id="sts" class="textfield_design" required></select>
+						<select id ="state" class="textfield_design" name ="city1"  required></select>
+						<script language="javascript">print_state("sts");</script>
 						<br><br>
 						
 						<input type="submit" value="Register" class="btn btn-primary"/><br>

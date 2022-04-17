@@ -70,6 +70,8 @@
 	   			<span class="profile_text_color">Gender : </span> <jsp:expression>gender</jsp:expression> <br>
 	   			<span class="profile_text_color">City : </span> <jsp:expression>city</jsp:expression><br>
 	   			
+	   			
+	   			
 	   		</div>
 	   	</div><br>
 	   	

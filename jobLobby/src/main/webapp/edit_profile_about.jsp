@@ -31,6 +31,9 @@
     	
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
    		
+   		<!-- javascript file for select city -->
+   		<script src="javascripts/cities.js"></script>
+   		
    		<script type="text/javascript">
    			function changeGender(){
    				
@@ -45,6 +48,15 @@
    				
    				
    			}
+   			
+   			function showCity(){
+   				const [city] = document.getElementsByName("city1")
+				var newCity = city.value;
+   				
+   				document.getElementById('changeCity_tf').value = newCity;
+   			}
+   	
+   			
    		</script>
 	</head>
 	<body>
@@ -64,17 +76,29 @@
 					    <input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br>
 					 	<form action="editProfileAbout" method="post">
 					 		
-					 		<input type="text"  value="<jsp:expression>name</jsp:expression>" name="name1" placeholder="Name" class="textfield_design" />
+					 		<input type="text"  value="<jsp:expression>name</jsp:expression>" name="name1" placeholder="Name" class="textfield_design" /><br>
 					 		<input id="changegender_tf" type="text"  name="gender1" value="<jsp:expression>gender</jsp:expression>" placeholder="" class="textfield_readonly" readonly="readonly" />
 					 			<select id="changegender" onchange="changeGender()" style="border-radius: 4px; padding: 5px 10px;">
 					 				<option>Change Gender</option>
 					 				<option>Male</option>
 					 				<option>Female</option>
-					 			</select>
+					 			</select><br>
 					 		
-					 		<input type="text"  value="<jsp:expression>city</jsp:expression>" name="city1" placeholder="Select City" class="textfield_design" />
-					 		<input type="text"  value="<jsp:expression>title</jsp:expression>" name="title1" class="textfield_design" placeholder="Profile Title" />							
-							<textarea rows="5" cols="7" placeholder="Skills"  name="skills1" class="textfield_design" ><jsp:expression>skills</jsp:expression></textarea>
+					 		<input type="text" id="changeCity_tf" value="<jsp:expression>city</jsp:expression>" class="textfield_readonly" readonly="readonly" />
+					 		
+					 		<!-- =========Select State and City using JavaScript =============  -->
+						
+							<select onchange="print_city('state', this.selectedIndex);" id="sts" class="textfield_design" required></select>
+							<select onchange="showCity()" id ="state" class="textfield_design" name ="city1"  required></select><br>
+							<script type="text/javascript">
+							 print_state("sts");
+							</script>
+						
+							
+					
+					 		
+					 		<input type="text"  value="<jsp:expression>title</jsp:expression>" name="title1" class="textfield_design" placeholder="Profile Title" /><br>							
+							<textarea rows="5" cols="7" placeholder="Skills"  name="skills1" class="textfield_design" ><jsp:expression>skills</jsp:expression></textarea><br>
 							
 							<input type="submit" value="Update"  class="btn btn-danger"/>
 					 	</form>		
