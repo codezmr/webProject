@@ -1,26 +1,31 @@
 
 
 html{
-	font-family: 'Nunito', sans-serif;
 	border: 0px;
 	margin: 0px;
 	
 }
 
+html *{
+	font-family: 'Nunito', sans-serif !important;
+}
+
+
 .icon_style{
 	font-size: 12px;
 	float: right;
+	text-decoration: none;
 }
 
 .col-md-1, .col-md-1, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
 	padding: 20px 30px;
 }
 .header_bg{
-	font-family: 'Nunito', sans-serif;
+	
 	 background: linear-gradient(to bottom, #0000cc 0%, #0099ff 100%);
 }
 .header-text-design{
-	font-family: 'Nunito', sans-serif;
+
 	font-size: 20px;
 	font-weight: bold;
 	color: white;
@@ -33,7 +38,7 @@ html{
 }
 
 .hyperlinks_design{
-	font-family: 'Nunito', sans-serif;
+	
 	color: yellow;
 	text-decoration: none;
 	
@@ -46,7 +51,7 @@ html{
 	
 }
 .menubardiv{
-	font-family: 'Nunito', sans-serif;
+	
 	background: linear-gradient(to bottom, #ffffff 45%, #ccffff 100%);
 }
 
@@ -65,7 +70,7 @@ html{
  
 #mynavbar ul li a
 {
-	font-family: 'Nunito', sans-serif;
+	
 	padding: 10px 20px;
 	text-decoration: none;
 }
@@ -87,14 +92,24 @@ html{
 
 #footermenubar ul li a
 {
-	font-family: 'Nunito', sans-serif;
+	
 	color: white;
 	padding: 10px 20px;
 	text-decoration: none;
 }
 
+.footer_rights_text{
+	
+	color: white;
+	text-align: center;
+	
+}
+.footer_rights_text a{
+	color: #0099ff;
+	text-decoration: none;
+	font-size: 18px;
+}
 .textfield_design{
-	font-family: 'Nunito', sans-serif;
 	padding: 5px 10px;
 	margin-bottom: 10px;
 	width: 300px;
@@ -107,9 +122,21 @@ html{
      border-color: #0000ff;
      box-shadow: 0 0 3px #0000ff;
 }
+.textfield_readonly{
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	width: 300px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.textfield_readonly:focus{
+	 outline: none;
+     border-color: #b22222;
+     box-shadow: 0 0 2px #b22222;
+}
 
 .select_option{
-	font-family: 'Nunito', sans-serif;
+	
 	padding: 5px 10px;
 	width: 200px;
 	border-radius: 5px;
@@ -117,7 +144,7 @@ html{
 }
 
 .jab_search_div{
-	font-family: 'Nunito', sans-serif;
+	
 	text-align: center;
 	box-shadow: 0 0 2px #ff0000, 0 0 5px #0000ff;
 	border-radius: 5px;
@@ -130,20 +157,16 @@ html{
 }
 
 .reg_div_design{
-	font-family: 'Nunito', sans-serif;
+	
 	text-align: center;
 	border-radius: 10px;
 	background: linear-gradient(0deg, rgba(0,70,238,1) 0%, rgba(213,250,248,0.9396709367340687) 39%);
-	
 	-webkit-box-shadow:  3px 3px 5px 6px #ccc; 
 	-moz-box-shadow:    3px 3px 5px 6px #ccc;
 	 box-shadow:         3px 3px 5px 6px #ccc;
 	  
 
 }
-
-
-
 
 .profile_text_color{
 	color: #acaaaa;

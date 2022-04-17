@@ -27,14 +27,19 @@
 		<meta charset="ISO-8859-1">
 		<title>Welcome: <jsp:expression>name.toUpperCase()</jsp:expression> </title>
 		
+		<!-- ========== For Bootstrap ============= -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >	
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+    	
+    	<!-- ========== For Goolge Fonts ========== -->
     	<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     	
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- ===========For icon =============== -->    	
+    	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     	
+    	<!-- =========== My Own CSS ================ -->
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
    
 	</head>
@@ -54,7 +59,7 @@
 	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression>
 	   			   
 	   			      <a href="edit_profile_about.jsp" class="icon_style">
-			             <span class="glyphicon glyphicon-pencil"></span>
+			             <i class="ri-edit-2-fill"></i>
 			           </a>
 			       
 	   			</h3><br>
@@ -72,8 +77,8 @@
 	   		
 	   		<div class="col-md-12">
 	   			<h4> <b>Education Details</b> 
-   			        <a href="add_profile_education.jsp" class="icon_style">
-		             <span class="glyphicon glyphicon-plus"></span>
+   			        <a href="add_profile_education.jsp" class="icon_style ">
+		             <i class="ri-add-fill"></i>
 		            </a>	   
 	   			 </h4>
 	   			 
@@ -100,7 +105,7 @@
 	   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50"></div>
 	   					<div class="col-md-10">
 	   						 <a href="edit_profile_education.jsp" class="icon_style">
-			             		 <span class="glyphicon glyphicon-pencil"></span>
+			             		 <i class="ri-edit-2-fill"></i>
 			          		 </a>
 	   					
 	   						<b> <span class="glyphicon glyphicon-home"></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
