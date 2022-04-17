@@ -75,7 +75,6 @@
 					    <h2>Personal Details</h2>
 					    <h6><b><jsp:expression>name</jsp:expression><span style="font-size: 12px">(<jsp:expression>email</jsp:expression>)</span></b></h6>
 					    
-					  <%--  <input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br> --%>
 					 	<form action="editProfileAbout" method="post">
 					 		
 					 		<input type="text"  value="<jsp:expression>name</jsp:expression>" name="name1" placeholder="Name" class="textfield_design" /><br>

@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-md-10">
 						<h2>Add Education Details</h2>
-						<input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br>
+					    <h6><b><jsp:expression>name</jsp:expression><span style="font-size: 12px">(<jsp:expression>email</jsp:expression>)</span></b></h6>
 						
 					 	<form action="addProfileEducation" method="post">
 					 		

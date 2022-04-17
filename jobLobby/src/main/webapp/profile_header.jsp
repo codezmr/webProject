@@ -11,6 +11,7 @@
     <head>
         <meta charset="ISO-8859-1">
         <title> Welcome : <jsp:expression> name.toUpperCase() </jsp:expression> </title>
+   		<link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
         <div class="row header_bg" >

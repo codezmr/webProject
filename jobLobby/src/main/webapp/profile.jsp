@@ -86,7 +86,7 @@
 	   			 
 	   			 <jsp:scriptlet>
 	   			 	
-	   			 String school = "", degree="", grade="", yearDuration="";
+	   			 String school = "", degree="", grade="", yearDuration="", id="";
 	   			 try{
 	   				 
 	   				Class.forName("com.mysql.jdbc.Driver");
@@ -97,6 +97,7 @@
 	   				ResultSet rs = ps.executeQuery();
 	   				while(rs.next()){
 	   					
+	   					id = rs.getString("id");
 	   					school = rs.getString("school");
 	   					degree = rs.getString("degree");
 	   					grade = rs.getString("grade");
@@ -106,7 +107,9 @@
 	   				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
 	   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50"></div>
 	   					<div class="col-md-10">
-	   						 <a href="edit_profile_education.jsp" class="icon_style">
+	   					
+	   							<!-- URL re-writing  -->
+	   						 <a href="edit_profile_education.jsp?id=<jsp:expression>id</jsp:expression>" class="icon_style">
 			             		 <i class="ri-edit-2-fill"></i>
 			          		 </a>
 	   					
