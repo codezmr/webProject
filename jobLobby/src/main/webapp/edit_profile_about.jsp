@@ -88,7 +88,7 @@
 					 		
 					 		<!-- =========Select State and City using JavaScript =============  -->
 						
-							<select onchange="print_city('state', this.selectedIndex);" id="sts" class="textfield_design" required></select>
+							<select onchange="print_city('stathttp://localhost:8080/jobLobby/index.jspe', this.selectedIndex);" id="sts" class="textfield_design" required></select>
 							<select onchange="showCity()" id ="state" class="textfield_design" name ="city1"  required></select><br>
 							<script type="text/javascript">
 							 print_state("sts");
