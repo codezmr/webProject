@@ -50,7 +50,7 @@
    			}
    			
    			function showCity(){
-   				const [city] = document.getElementsByName("city1")
+   				const [city] = document.getElementsByName("newCity")
 				var newCity = city.value;
    				
    				document.getElementById('changeCity_tf').value = newCity;
@@ -73,7 +73,9 @@
 					</div>
 					<div class="col-md-10">
 					    <h2>Personal Details</h2>
-					    <input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br>
+					    <h6><b><jsp:expression>name</jsp:expression><span style="font-size: 12px">(<jsp:expression>email</jsp:expression>)</span></b></h6>
+					    
+					  <%--  <input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br> --%>
 					 	<form action="editProfileAbout" method="post">
 					 		
 					 		<input type="text"  value="<jsp:expression>name</jsp:expression>" name="name1" placeholder="Name" class="textfield_design" /><br>
@@ -84,12 +86,12 @@
 					 				<option>Female</option>
 					 			</select><br>
 					 		
-					 		<input type="text" id="changeCity_tf" value="<jsp:expression>city</jsp:expression>" class="textfield_readonly" readonly="readonly" />
+					 		<input type="text" id="changeCity_tf" value="<jsp:expression>city</jsp:expression>" name ="city1" class="textfield_readonly" readonly="readonly" />
 					 		
 					 		<!-- =========Select State and City using JavaScript =============  -->
 						
-							<select onchange="print_city('stathttp://localhost:8080/jobLobby/index.jspe', this.selectedIndex);" id="sts" class="textfield_design" required></select>
-							<select onchange="showCity()" id ="state" class="textfield_design" name ="city1"  required></select><br>
+							<select onchange="print_city('state', this.selectedIndex);" id="sts" class="textfield_design" ></select>
+							<select onchange="showCity()" id ="state" class="textfield_design" name="newCity"></select><br>
 							<script type="text/javascript">
 							 print_state("sts");
 							</script>
