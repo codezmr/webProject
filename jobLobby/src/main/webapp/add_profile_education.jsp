@@ -38,12 +38,21 @@
 						<img alt="" src="images/logo.png" height="100" style="border-radius: 50%"/>
 					</div>
 					<div class="col-md-10">
+						<h2>Add Education Details</h2>
+						<input type="text" value="<jsp:expression>email</jsp:expression>" class="textfield_readonly" readonly="readonly" style="background-color: #acaaaa; "/><br>
+						
 					 	<form action="addProfileEducation" method="post">
-					 		<b><jsp:expression>email</jsp:expression></b> <br><br>
-					 		School/College <br><input type="text"          name="school1" class="textfield_design" /><br>
-					 		Degree <br><input type="text"          name="degree1" placeholder="Eg.10th/12th/B.tech..." class="textfield_design" /><br>
-					 		Passing Year <br><input type="text"    name="passyear1" placeholder="Eg.2022" class="textfield_design" /><br>
-					 		Grade <br><input type="text"           name="grade1" placeholder="Eg.78% or 8.00"  class="textfield_design" /><br>							
+					 		
+					 		School/College <br><input type="text"  name="school1" class="textfield_design" /><br>
+					 		
+					 		Degree <br><input type="text" name="degree1" placeholder="Eg.10th/12th/B.tech..." class="textfield_design" /><br>
+					 		
+					 		Year Duration <br>  
+					 			From <input type="number" min="2000" max="2099" step="1" value="2018" name= "fromyear1" style="border-radius: 5px; width: 100px"/> &nbsp;&nbsp;
+					 			To <input type="number" min="2000" max="2099" step="1" value="2022" name="toyear1" style="border-radius: 5px; width: 100px" /><br><br>
+					 		
+					 		Grade <br><input type="text" name="grade1" placeholder="Eg.78% or 8.00"  class="textfield_design" /><br>							
+							
 							Description <br><textarea rows="5" cols="7" placeholder="Short Description Related To Degree"  name="edudesc1" class="textfield_design" ></textarea><br>
 							
 							<input type="submit" value="Update"  class="btn btn-danger"/>

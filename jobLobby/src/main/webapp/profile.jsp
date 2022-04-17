@@ -86,7 +86,7 @@
 	   			 
 	   			 <jsp:scriptlet>
 	   			 	
-	   			 String school = "", degree="", grade="", passyear="";
+	   			 String school = "", degree="", grade="", yearDuration="";
 	   			 try{
 	   				 
 	   				Class.forName("com.mysql.jdbc.Driver");
@@ -100,7 +100,7 @@
 	   					school = rs.getString("school");
 	   					degree = rs.getString("degree");
 	   					grade = rs.getString("grade");
-	   					passyear = rs.getString("passyear");
+	   					yearDuration = rs.getString("yearDuration");
 	   			 </jsp:scriptlet>
 	   			
 	   				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
@@ -112,7 +112,7 @@
 	   					
 	   						<b> <span class="glyphicon glyphicon-home"></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
 	   						 <span class="glyphicon glyphicon-education"></span>&nbsp;<jsp:expression>degree</jsp:expression>
-	   						<span style="color: #858585">(<jsp:expression>passyear</jsp:expression>)</span><br>
+	   						<span style="color: #858585">(<jsp:expression>yearDuration</jsp:expression>)</span><br>
 	   						 <span class="glyphicon glyphicon-book"></span>&nbsp;<jsp:expression>grade</jsp:expression><br>
 	   					</div>
 	   				</div><br>
