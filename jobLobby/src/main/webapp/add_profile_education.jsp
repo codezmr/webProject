@@ -55,7 +55,7 @@
 							
 							Description <br><textarea rows="5" cols="7" placeholder="Short Description Related To Degree"  name="edudesc1" class="textfield_design" ></textarea><br>
 							
-							<input type="submit" value="Update"  class="btn btn-danger"/>
+							<input type="submit" value="Add Education"  class="btn btn-danger"/>
 					 	</form>		
 					 			
 					</div>

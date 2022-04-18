@@ -22,8 +22,7 @@
 </jsp:scriptlet>
 
  <jsp:scriptlet>
-	   			 	
-	   			 String school = "", degree="", grade="", yearDuration="", edudesc = "", fromYear = "", toYear="";
+			 String school = "", degree="", grade="", yearDuration="", edudesc = "", fromYear = "", toYear="";
 	   			 try{
 	   				 
 		   				Class.forName("com.mysql.jdbc.Driver");
@@ -45,7 +44,7 @@
 			   			   fromYear = parts[0];
 			   			   toYear = parts[1];
 	   			 }catch(Exception e){
-	   				 out.print(e);
+	   				 out.println(e);
 	   			 }
 	   					
 	   			 </jsp:scriptlet>
@@ -83,6 +82,8 @@
 						
 					 	<form action="editProfileEducation" method="post">
 					 		
+					 		<input type="hidden" value="<jsp:expression>id</jsp:expression>" name="id1" />
+					 		
 					 		School/College <br><input type="text" value="<jsp:expression>school</jsp:expression>" name="school1" class="textfield_design" /><br>
 					 		
 					 		Degree <br><input type="text" value="<jsp:expression>degree</jsp:expression>" name="degree1" placeholder="Eg.10th/12th/B.tech..." class="textfield_design" /><br>
@@ -96,7 +97,7 @@
 							Description <br><textarea rows="5" cols="7"   name="edudesc1" class="textfield_design" ><jsp:expression>edudesc</jsp:expression>
 							</textarea><br>
 							
-							<input type="submit" value="Update"  class="btn btn-danger"/>
+							<input type="submit" value="Update Education"  class="btn btn-danger"/>
 					 	</form>		
 					 			
 					</div>

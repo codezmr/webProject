@@ -79,4 +79,16 @@
 		</servlet-mapping>
 		
 		
+					<!-- ======== EditProfileEducation Mapping ======== -->
+		<servlet>
+			<servlet-name>epedemo</servlet-name>
+			<servlet-class>com.codezmr.backend.EditProfileEducation</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>epedemo</servlet-name>
+			<url-pattern>/editProfileEducation</url-pattern>
+		</servlet-mapping>
+		
+		
 	</web-app>
