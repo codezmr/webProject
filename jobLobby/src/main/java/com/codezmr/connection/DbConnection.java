@@ -11,22 +11,13 @@ public class DbConnection {
 	 * */
 	
 	static Connection con;
-	static {
-		
-		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
-
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public static Connection getConnect() { 
 		
 		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
 
 		} catch (Exception e) {
