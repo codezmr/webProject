@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,8 +39,11 @@ public class EditProfileEducation extends HttpServlet{
 		String grade2 = req.getParameter("grade1");
 		String edudesc2 = req.getParameter("edudesc1");
 		
+		Connection con = null;
+		
 		try {
-			Connection con = DbConnection.getConnect();
+			con = DbConnection.getConnect();
+			con.setAutoCommit(false);
 			
 			PreparedStatement ps1 = con.prepareStatement("update education set school = ?, degree=?, yearDuration=?, grade=?, edudesc=? where id=?");
 		
@@ -53,9 +57,10 @@ public class EditProfileEducation extends HttpServlet{
 			int i1 = ps1.executeUpdate();
 			
 			if(i1>0) {
-								
+					con.commit();			
 				resp.sendRedirect("profile.jsp");
 			}else {
+				con.rollback();
 				RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
 				rd1.include(req, resp);
 				
@@ -65,7 +70,23 @@ public class EditProfileEducation extends HttpServlet{
 			
 			
 		} catch (Exception e) {
-			out.print(e);
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
+			rd1.include(req, resp);
+			
+			RequestDispatcher rd2 = req.getRequestDispatcher("edit_profile_education.jsp");
+			rd2.include(req, resp);
+			
+		}finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 	}
 }

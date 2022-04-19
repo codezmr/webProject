@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +35,13 @@ public class Register extends HttpServlet {
 			}
 		String city2 = req.getParameter("city1");
 		
+		Connection con = null;
+		
 		try {
-			Connection con = DbConnection.getConnect();PreparedStatement ps1 = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
+			con = DbConnection.getConnect();
+			con.setAutoCommit(false);
+			
+			PreparedStatement ps1 = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
 			ps1.setString(1, name2);
 			ps1.setString(2, email2);
 			ps1.setString(3, pass2);
@@ -52,6 +59,7 @@ public class Register extends HttpServlet {
 			
 			if(i1>0 && i2>0) {
 				
+				con.commit();
 				HttpSession session = req.getSession();
 				session.setAttribute("session_name", name2);
 				session.setAttribute("session_email", email2);
@@ -65,11 +73,32 @@ public class Register extends HttpServlet {
 				resp.sendRedirect("profile.jsp");
 				
 			}else {
-				out.print("User register failure.");
+				con.rollback();
+				RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
+				rd1.include(req, resp);
+				
+				RequestDispatcher rd2 = req.getRequestDispatcher("register.jsp");
+				rd2.include(req, resp);
 			}
 			
 		} catch (Exception e) {
-			out.print(e);
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
+			rd1.include(req, resp);
+			
+			RequestDispatcher rd2 = req.getRequestDispatcher("register.jsp");
+			rd2.include(req, resp);
+		}finally {
+			try {
+				con.close();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 	 }
 }

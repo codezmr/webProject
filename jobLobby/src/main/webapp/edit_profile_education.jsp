@@ -23,11 +23,10 @@
 
  <jsp:scriptlet>
 			 String school = "", degree="", grade="", yearDuration="", edudesc = "", fromYear = "", toYear="";
-	   			 try{
-	   				 
-		   				
-		   				Connection con = DbConnection.getConnect();			
-		   				
+			 Connection con = null;	 
+			 try{
+				 		con = DbConnection.getConnect();			
+		   						   				
 		   				PreparedStatement ps = con.prepareStatement("select * from education where id=?");
 		   				ps.setString(1, id);
 		   				 
@@ -46,6 +45,12 @@
 			   			   toYear = parts[1];
 	   			 }catch(Exception e){
 	   				 out.println(e);
+	   			 }finally{
+	   				 try{
+	   					 con.close();
+	   				 }catch(Exception e2){
+	   					 out.println(e2);
+	   				 }
 	   			 }
 	   					
 	   			 </jsp:scriptlet>

@@ -24,10 +24,11 @@
   <jsp:scriptlet>
    			 	
     			 String company = "", location ="", jobtitle ="", yearDurationExp ="", idExp1 ="" , expdesc="",  fromYear = "", toYear="";
-   			 try{
+    			 Connection con = null;
+    			 try{
    				 
    				
-   				Connection con = DbConnection.getConnect();			
+   				con = DbConnection.getConnect();			
    				PreparedStatement ps = con.prepareStatement("select * from experience where id=?");
    				ps.setString(1, id);
    				 
@@ -48,7 +49,14 @@
 	 			   toYear = parts[1];
    			 }catch(Exception e){
    				 out.print(e);
+   			 }finally{
+   				 try{
+   					 con.close();
+   				 }catch(Exception e2){
+   					 out.println(e2);
+   				 }
    			 }
+   				
    			 </jsp:scriptlet>
 <!DOCTYPE html>
 <html>

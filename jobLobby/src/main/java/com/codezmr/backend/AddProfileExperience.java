@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,25 +36,30 @@ public class AddProfileExperience extends HttpServlet {
 		String jobtitle2 = req.getParameter("jobtitle1");
 		String expdesc2 = req.getParameter("expdesc1");
 		
+		Connection con = null;
+		PreparedStatement ps = null;
 		try {
-			Connection con = DbConnection.getConnect();
+			con = DbConnection.getConnect();
+			con.setAutoCommit(false);
 			
-			PreparedStatement ps1 = con.prepareStatement("insert into experience(email, company, location, yearDuration, jobtitle, expdesc ) values(?,?,?,?,?,?)");
-			ps1.setString(1, email2);
-			ps1.setString(2, company2);
-			ps1.setString(3, location2);
-			ps1.setString(4, yearDuration1);
-			ps1.setString(5, jobtitle2);
-			ps1.setString(6, expdesc2);
+			ps = con.prepareStatement("insert into experience(email, company, location, yearDuration, jobtitle, expdesc ) values(?,?,?,?,?,?)");
+			ps.setString(1, email2);
+			ps.setString(2, company2);
+			ps.setString(3, location2);
+			ps.setString(4, yearDuration1);
+			ps.setString(5, jobtitle2);
+			ps.setString(6, expdesc2);
 			
-			int i1 = ps1.executeUpdate();
+			int i1 = ps.executeUpdate();
 			
 			if(i1>0) {
-				
+				con.commit();
 				session.setAttribute("session_school", company2);
 				
 				resp.sendRedirect("profile.jsp");
 			}else {
+				
+				con.rollback();
 				RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
 				rd1.include(req, resp);
 				
@@ -63,7 +69,25 @@ public class AddProfileExperience extends HttpServlet {
 			
 			
 		} catch (Exception e) {
-			out.print(e);
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			RequestDispatcher rd1 = req.getRequestDispatcher("error.jsp");
+			rd1.include(req, resp);
+			
+			RequestDispatcher rd2 = req.getRequestDispatcher("add_profile_experience.jsp");
+			rd2.include(req, resp);
+		}
+		
+		finally {
+			try {
+				
+				con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 	}
 }

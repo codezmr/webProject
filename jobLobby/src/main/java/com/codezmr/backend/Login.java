@@ -29,8 +29,9 @@ public class Login extends HttpServlet{
 		
 		String name2="", gender2="", city2="", field2="" ;
 		
+		Connection con = null;
 		try {
-			Connection con = DbConnection.getConnect();
+			 con = DbConnection.getConnect();
 			PreparedStatement ps = con.prepareStatement("select * from register where email= ? and password = ?");
 			ps.setString(1, email2);
 			ps.setString(2, pass2);
@@ -87,7 +88,29 @@ public class Login extends HttpServlet{
 			}
 			
 		} catch (Exception e) {
+			
+			RequestDispatcher rd1 = req.getRequestDispatcher("header.jsp");
+			rd1.include(req, resp);
+			
+			RequestDispatcher rd2 = req.getRequestDispatcher("menubar.jsp");
+			rd2.include(req, resp);
+			
+			RequestDispatcher rd3 = req.getRequestDispatcher("loginerror.jsp");
+			rd3.include(req, resp);
+			
+			RequestDispatcher rd4 = req.getRequestDispatcher("logindiv.jsp");
+			rd4.include(req, resp);
+			
+			RequestDispatcher rd5 = req.getRequestDispatcher("footer.jsp");
+			rd5.include(req, resp);
+			
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 	}
 }

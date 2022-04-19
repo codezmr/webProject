@@ -94,11 +94,12 @@
 	   			 <jsp:scriptlet>
 	   			 	
 	   			 String school = "", degree="", grade="", yearDuration="", id="";
+	   			 Connection con = null;
 	   			 try{
 	   				 
-	   				Connection con = DbConnection.getConnect();
+	   				 con = DbConnection.getConnect();
 	   				 PreparedStatement ps = con.prepareStatement("select * from education where email=?");
-	   				ps.setString(1, email);
+	   				 ps.setString(1, email);
 	   				 
 	   				ResultSet rs = ps.executeQuery();
 	   				while(rs.next()){
@@ -133,7 +134,14 @@
 	   				
 	   			 }catch(Exception e){
 	   				 out.print(e);
+	   			 }finally{
+	   				 try{
+	   					 con.close();
+	   				 }catch(Exception e2){
+	   					 out.println(e2);
+	   				 }
 	   			 }
+	   				
 	   			 
 	   			 </jsp:scriptlet>
 	   			 
@@ -160,9 +168,10 @@
    			 <jsp:scriptlet>
    			 	
     			 String company1 = "", location1 ="", jobtitle1 ="", yearDurationExp1 ="", idExp1 ="" , expdesc1="";
-   			 try{
+    			 Connection con2 = null;
+    			 try{
    				 
-   				Connection con = DbConnection.getConnect();
+   				con2 = DbConnection.getConnect();
    				PreparedStatement ps = con.prepareStatement("select * from experience where email=?");
    				ps.setString(1, email);
    				 
@@ -204,6 +213,12 @@
    				
    			 }catch(Exception e){
    				 out.print(e);
+   			 }finally{
+   				 try{
+   					 con2.close();
+   				 }catch(Exception e2){
+   					 out.println(e2);
+   				 }
    			 }
    			 
    			 </jsp:scriptlet>
