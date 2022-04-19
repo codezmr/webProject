@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
 <%@page import="java.sql.Connection" %>
-<%@page import="java.sql.DriverManager" %>
+<%@page import=" com.codezmr.connection.DbConnection" %>
 <%@page import="java.sql.ResultSet" %>
 <%@page import="java.sql.PreparedStatement" %>
 
@@ -96,9 +96,8 @@
 	   			 String school = "", degree="", grade="", yearDuration="", id="";
 	   			 try{
 	   				 
-	   				Class.forName("com.mysql.jdbc.Driver");
-	   				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
-	   				PreparedStatement ps = con.prepareStatement("select * from education where email=?");
+	   				Connection con = DbConnection.getConnect();
+	   				 PreparedStatement ps = con.prepareStatement("select * from education where email=?");
 	   				ps.setString(1, email);
 	   				 
 	   				ResultSet rs = ps.executeQuery();
@@ -163,8 +162,7 @@
     			 String company1 = "", location1 ="", jobtitle1 ="", yearDurationExp1 ="", idExp1 ="" , expdesc1="";
    			 try{
    				 
-   				Class.forName("com.mysql.jdbc.Driver");
-   				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+   				Connection con = DbConnection.getConnect();
    				PreparedStatement ps = con.prepareStatement("select * from experience where email=?");
    				ps.setString(1, email);
    				 

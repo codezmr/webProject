@@ -3,7 +3,6 @@ package com.codezmr.backend;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
@@ -11,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.codezmr.connection.DbConnection;
 
 public class Register extends HttpServlet {
 	
@@ -33,9 +34,7 @@ public class Register extends HttpServlet {
 		String city2 = req.getParameter("city1");
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
-			PreparedStatement ps1 = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
+			Connection con = DbConnection.getConnect();PreparedStatement ps1 = con.prepareStatement("insert into register(name, email, password, gender, field, city) values(?,?,?,?,?,?)");
 			ps1.setString(1, name2);
 			ps1.setString(2, email2);
 			ps1.setString(3, pass2);

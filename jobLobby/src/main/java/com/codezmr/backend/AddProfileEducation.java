@@ -3,7 +3,6 @@ package com.codezmr.backend;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.codezmr.connection.DbConnection;
 
 public class AddProfileEducation extends HttpServlet {
 	
@@ -35,8 +36,8 @@ public class AddProfileEducation extends HttpServlet {
 		String edudesc2 = req.getParameter("edudesc1");
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+			Connection con = DbConnection.getConnect();
+			
 			PreparedStatement ps1 = con.prepareStatement("insert into education(email, school, degree, yearDuration, grade, edudesc ) values(?,?,?,?,?,?)");
 			ps1.setString(1, email2);
 			ps1.setString(2, school2);

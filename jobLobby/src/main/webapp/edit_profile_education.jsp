@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
 <%@page import="java.sql.Connection" %>
-<%@page import="java.sql.DriverManager" %>
+<%@page import=" com.codezmr.connection.DbConnection" %>
 <%@page import="java.sql.ResultSet" %>
 <%@page import="java.sql.PreparedStatement" %>
 
@@ -25,8 +25,9 @@
 			 String school = "", degree="", grade="", yearDuration="", edudesc = "", fromYear = "", toYear="";
 	   			 try{
 	   				 
-		   				Class.forName("com.mysql.jdbc.Driver");
-		   				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+		   				
+		   				Connection con = DbConnection.getConnect();			
+		   				
 		   				PreparedStatement ps = con.prepareStatement("select * from education where id=?");
 		   				ps.setString(1, id);
 		   				 

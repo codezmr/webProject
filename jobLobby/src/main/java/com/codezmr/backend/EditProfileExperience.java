@@ -3,7 +3,6 @@ package com.codezmr.backend;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.codezmr.connection.DbConnection;
 
 public class EditProfileExperience extends HttpServlet {
 	
@@ -34,8 +35,8 @@ public class EditProfileExperience extends HttpServlet {
 		String expdesc2 = req.getParameter("expdesc1");
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+			
+			Connection con = DbConnection.getConnect();
 			PreparedStatement ps1 = con.prepareStatement("update experience set company = ?, location=?, yearDuration=?, jobtitle=?, expdesc=? where id=?");
 		
 			ps1.setString(1, company2);

@@ -3,7 +3,6 @@ package com.codezmr.backend;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -13,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.codezmr.connection.DbConnection;
 
 public class Login extends HttpServlet{
 	
@@ -29,9 +30,7 @@ public class Login extends HttpServlet{
 		String name2="", gender2="", city2="", field2="" ;
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");
-		
+			Connection con = DbConnection.getConnect();
 			PreparedStatement ps = con.prepareStatement("select * from register where email= ? and password = ?");
 			ps.setString(1, email2);
 			ps.setString(2, pass2);
