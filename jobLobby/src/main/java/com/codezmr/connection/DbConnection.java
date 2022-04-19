@@ -24,6 +24,16 @@ public class DbConnection {
 		}
 	}
 	
-	public static Connection getConnect() { return con;}
+	public static Connection getConnect() { 
+		
+		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return con;
+		
+	}
 	
 }

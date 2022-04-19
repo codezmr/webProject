@@ -134,12 +134,6 @@
 	   				
 	   			 }catch(Exception e){
 	   				 out.print(e);
-	   			 }finally{
-	   				 try{
-	   					 con.close();
-	   				 }catch(Exception e2){
-	   					 out.println(e2);
-	   				 }
 	   			 }
 	   				
 	   			 
