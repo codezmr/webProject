@@ -112,7 +112,7 @@
 	   			 </jsp:scriptlet>
 	   			
 	   				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
-	   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50"></div>
+	   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50" style="margin-top: 30%;"></div>
 	   					<div class="col-md-10">
 	   					
 	   							<!-- URL re-writing  -->
@@ -180,7 +180,7 @@
    			 </jsp:scriptlet>
    			
    				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
-   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50"></div>
+   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="expr.png" src="images/expr.png" height="40" style="margin-top: 40%"></div>
    					<div class="col-md-10">
    					
    							<!-- URL re-writing  -->

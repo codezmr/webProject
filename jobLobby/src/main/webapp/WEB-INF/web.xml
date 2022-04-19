@@ -101,4 +101,18 @@
 			<url-pattern>/addProfileExperience</url-pattern>
 		</servlet-mapping>
 		
+		
+<!-- ======== EditProfileExperience Mapping ======== -->
+		<servlet>
+			<servlet-name>epexpdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.EditProfileExperience</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>epexpdemo</servlet-name>
+			<url-pattern>/editProfileExperience</url-pattern>
+		</servlet-mapping>
+		
+		
+		
 	</web-app>
