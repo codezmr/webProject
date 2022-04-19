@@ -42,6 +42,7 @@
     	<!-- =========== My Own CSS ================ -->
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
    
+
 	</head>
 	<body>
 	  <jsp:include page="profile_header.jsp"></jsp:include>
@@ -119,10 +120,10 @@
 			             		 <i class="ri-edit-2-fill"></i>
 			          		 </a>
 	   					
-	   						<b> <span class="glyphicon glyphicon-home"></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
-	   						 <span class="glyphicon glyphicon-education"></span>&nbsp;<jsp:expression>degree</jsp:expression>
+	   						<i class="ri-building-4-line"></i><b></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
+	   						<i class="ri-book-open-line"></i>&nbsp;<jsp:expression>degree</jsp:expression>
 	   						<span style="color: #858585">(<jsp:expression>yearDuration</jsp:expression>)</span><br>
-	   						 <span class="glyphicon glyphicon-book"></span>&nbsp;<jsp:expression>grade</jsp:expression><br>
+	   						<i class="ri-medal-line"></i>&nbsp;<jsp:expression>grade</jsp:expression><br>
 	   					</div>
 	   				</div><br>
 	   			
@@ -159,22 +160,23 @@
    			 
    			 <jsp:scriptlet>
    			 	
-    			 String company = "", location="", titleExp="", yearDurationExp="", idExp="";
+    			 String company1 = "", location1 ="", jobtitle1 ="", yearDurationExp1 ="", idExp1 ="" , expdesc1="";
    			 try{
    				 
    				Class.forName("com.mysql.jdbc.Driver");
    				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
-   				PreparedStatement ps = con.prepareStatement("select * from education where email=?");
+   				PreparedStatement ps = con.prepareStatement("select * from experience where email=?");
    				ps.setString(1, email);
    				 
    				ResultSet rs = ps.executeQuery();
    				while(rs.next()){
    					
-   					id = rs.getString("id");
-   					school = rs.getString("school");
-   					degree = rs.getString("degree");
-   					grade = rs.getString("grade");
-   					yearDuration = rs.getString("yearDuration");
+   					idExp1 = rs.getString("id");
+   					company1 = rs.getString("company");
+   					location1 = rs.getString("location");
+   					jobtitle1 = rs.getString("jobtitle");
+   					yearDurationExp1 = rs.getString("yearDuration");
+   					expdesc1 = rs.getString("expdesc");
    			 </jsp:scriptlet>
    			
    				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
@@ -182,14 +184,18 @@
    					<div class="col-md-10">
    					
    							<!-- URL re-writing  -->
-   						 <a href="edit_profile_experience.jsp?id=<jsp:expression>id</jsp:expression>" class="icon_style">
+   						 <a href="edit_profile_experience.jsp?id=<jsp:expression>idExp1</jsp:expression>" class="icon_style">
 		             		 <i class="ri-edit-2-fill"></i>
 		          		 </a>
    					
-   						<b> <span class="glyphicon glyphicon-home"></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
-   						 <span class="glyphicon glyphicon-education"></span>&nbsp;<jsp:expression>degree</jsp:expression>
-   						<span style="color: #858585">(<jsp:expression>yearDuration</jsp:expression>)</span><br>
-   						 <span class="glyphicon glyphicon-book"></span>&nbsp;<jsp:expression>grade</jsp:expression><br>
+   						 <i class="ri-team-fill"></i><b> &nbsp;<jsp:expression>company1</jsp:expression></b><br>
+   						 <i class="ri-map-pin-2-fill"></i>&nbsp;<jsp:expression>location1</jsp:expression><br>
+   						 <i class="ri-send-plane-fill"></i>&nbsp;<jsp:expression>yearDurationExp1</jsp:expression>
+   						    <abbr title="<jsp:expression>expdesc1</jsp:expression>" style="text-decoration: none;">
+   						      <span style="color: #858585; font-size: 13px; cursor: zoom-in;" >(Experience)</span>
+   						    </abbr><br>
+				
+   						 <i class="ri-user-2-fill"></i>&nbsp;<jsp:expression>jobtitle1</jsp:expression><br>
    					</div>
    				</div><br>
    			
