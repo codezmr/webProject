@@ -48,9 +48,11 @@
 	  <jsp:include page="menubar.jsp"></jsp:include>
 	  	
 	  	
-	  <div class="row">
+	  <div class="row"><!-- <======> Main Div End -->
 	   <div class="col-md-2"></div>
 	   <div class="col-md-8">
+	   
+<!-- =========About Details Start==========  -->
 	   	<div class="row " style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
 	   		<div class="col-md-2" >
 	   			<img alt="" src="images/logo.png" height="100" style="border-radius: 50%"/>
@@ -74,6 +76,10 @@
 	   			
 	   		</div>
 	   	</div><br>
+<!-- =========About Details End==========  -->	 
+
+  	
+<!-- =========Education Details Start==========  -->
 	   	
 	   	<div class="row" style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
 	   		
@@ -134,7 +140,77 @@
 	   		</div>
 	   		
 	   	
-	   	</div> <br>
+	   	</div> <br><br>
+<!-- =========Education Details End==========  -->
+	   	
+	   	
+	   	
+	   	
+<!-- =========Experience Details Start==========  -->
+
+	   	<div class="row" style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
+   		
+   		<div class="col-md-12">
+   			<h4> <b>Experience Details</b> 
+  			        <a href="add_profile_experience.jsp" class="icon_style ">
+	             <i class="ri-add-fill"></i>
+	            </a>	   
+   			 </h4>
+   			 
+   			 <jsp:scriptlet>
+   			 	
+    			 String company = "", location="", titleExp="", yearDurationExp="", idExp="";
+   			 try{
+   				 
+   				Class.forName("com.mysql.jdbc.Driver");
+   				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby", "root", "codezmr");			
+   				PreparedStatement ps = con.prepareStatement("select * from education where email=?");
+   				ps.setString(1, email);
+   				 
+   				ResultSet rs = ps.executeQuery();
+   				while(rs.next()){
+   					
+   					id = rs.getString("id");
+   					school = rs.getString("school");
+   					degree = rs.getString("degree");
+   					grade = rs.getString("grade");
+   					yearDuration = rs.getString("yearDuration");
+   			 </jsp:scriptlet>
+   			
+   				<div class="row" style="background-color: #eeecec; border-radius: 5px;">
+   					<div class="col-md-2">&nbsp; &nbsp; &nbsp;<img alt="edu.png" src="images/edu.png" height="50"></div>
+   					<div class="col-md-10">
+   					
+   							<!-- URL re-writing  -->
+   						 <a href="edit_profile_experience.jsp?id=<jsp:expression>id</jsp:expression>" class="icon_style">
+		             		 <i class="ri-edit-2-fill"></i>
+		          		 </a>
+   					
+   						<b> <span class="glyphicon glyphicon-home"></span>&nbsp;<jsp:expression>school</jsp:expression></b><br>
+   						 <span class="glyphicon glyphicon-education"></span>&nbsp;<jsp:expression>degree</jsp:expression>
+   						<span style="color: #858585">(<jsp:expression>yearDuration</jsp:expression>)</span><br>
+   						 <span class="glyphicon glyphicon-book"></span>&nbsp;<jsp:expression>grade</jsp:expression><br>
+   					</div>
+   				</div><br>
+   			
+   					
+   			 <jsp:scriptlet>
+   					
+   				}
+   				
+   			 }catch(Exception e){
+   				 out.print(e);
+   			 }
+   			 
+   			 </jsp:scriptlet>
+   			 
+   	   	</div>
+   		
+   	
+   	   </div> <br><br>
+
+
+<!-- =========Experience Details End============  -->
 	   	
 	   	<div class="row" style="background-color: #ececec; border-radius: 10px">
 	   		<div class="col-md-2"></div>
@@ -147,7 +223,8 @@
 	   	
 	   </div>
 	   <div class="col-md-2"></div>
-	  </div>
+	   
+	  </div><!-- <======> Main Div End -->
 	 
 	  
 	  <jsp:include page="footer.jsp"></jsp:include>
