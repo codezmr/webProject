@@ -1,7 +1,9 @@
 package com.codezmr.connection;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
@@ -11,19 +13,30 @@ public class DbConnection {
 	
 	public static Connection getConnect() { 
 		
+		String jdbc_url = null, username = null, password = null;
 		try {
 			
-			/*
-			 * Class.forName("com.mysql.jdbc.Driver");
-			 * 
-			 * con = DriverManager.getConnection("jdbc:mysql://localhost:3306/joblobby",
-			 * "root", "codezmr");
-			 */
+			InputStream is = DbConnection.class.getResourceAsStream("/com/codezmr/resources/db.properties");
+			Properties p = new Properties();
+			p.load(is);
+			
+			jdbc_url = p.getProperty("jdbc-url");
+			username = p.getProperty("username");
+			password = p.getProperty("password");
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			
+			
 			
 			MysqlDataSource ds = new MysqlDataSource();
-			ds.setURL("jdbc:mysql://localhost:3306/joblobby");
-			ds.setUser("root");
-			ds.setPassword("codezmr");
+			ds.setURL(jdbc_url);
+			ds.setUser(username);
+			ds.setPassword(password);
 			
 			con = ds.getConnection();
 			
