@@ -19,9 +19,12 @@
                 <img src="images/logo.png" height="50" />
                 <span class="header-text-design"> Job Portal </span>
             </div>
-            <div class="col-md-4" style="text-align:center;" >
-                <span style="color: yellow" > Welcome : <a href="profile.jsp" class="header-text-design"> <jsp:expression> name.toUpperCase() </jsp:expression> </a> </span>
-            </div>
+
+			<div class="col-md-4" style="text-align:center;">
+			  <img src="images/profilepic.png" height="30">
+			  <a href="profile.jsp" class="header-text-design" style=""> <jsp:expression> name.toUpperCase() </jsp:expression> </a>
+			</div>
+
             <div class="col-md-4" style="text-align:right;" >
                 <a href="Logout" class="header-text-design" > Logout </a>
             </div>

@@ -21,7 +21,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Profile</title>
+		<title>Edit Details</title>
 		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >	
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
@@ -72,7 +72,7 @@
 						<img alt="" src="images/logo.png" height="100" style="border-radius: 50%"/>
 					</div>
 					<div class="col-md-10">
-					    <h2>Personal Details</h2>
+					    <h2>Edit Personal Details</h2>
 					    <h6><b><jsp:expression>name</jsp:expression><span style="font-size: 12px">(<jsp:expression>email</jsp:expression>)</span></b></h6>
 					    
 					 	<form action="editProfileAbout" method="post">

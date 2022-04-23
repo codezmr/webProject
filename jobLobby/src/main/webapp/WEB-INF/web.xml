@@ -136,5 +136,17 @@
 		</servlet-mapping>
 		
 		
+<!-- ======== "UpdateProfilePics" Mapping ======== -->
+		<servlet>
+			<servlet-name>uppdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.UpdateProfilePics</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>uppdemo</servlet-name>
+			<url-pattern>/updateProfilePics</url-pattern>
+		</servlet-mapping>
+		
+		
 		
 	</web-app>

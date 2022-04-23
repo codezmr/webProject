@@ -56,7 +56,13 @@
 <!-- =========About Details Start==========  -->
 	   	<div class="row " style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
 	   		<div class="col-md-2" >
-	   			<img alt="" src="images/logo.png" height="100" style="border-radius: 50%"/>
+	   		
+	   			 <a href="edit_profile_pics.jsp" class="icon_style" >
+            		 <i class="ri-edit-2-fill" style="float: right"></i>
+         		 </a>
+         		 
+	   			<img alt="" src="images/profilepic.png" height="100" style="border-radius: 50%"/>
+	   			 
 	   		</div>
 	   		<div class="col-md-10">
 	   			<h3 style="color: blue"><jsp:expression>name.toUpperCase()</jsp:expression>
