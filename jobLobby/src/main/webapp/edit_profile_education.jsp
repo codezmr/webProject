@@ -68,7 +68,21 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     	
     	<link rel="stylesheet" type="text/css" href="css/style.css" />
-   
+   			
+   		<script type="text/javascript">
+   			function submitFun(clicked){
+   				
+   				if(clicked === 'update'){
+   					
+   					document.editEduForm.action = "editProfileEducation";
+   					document.editEduForm.submit();
+   					
+   				}if(clicked === 'delete'){
+   					document.editEduForm.action = "deleteProfileEducation";
+   					document.editEduForm.submit();
+   				}
+   			}
+   		</script>
 	</head>
 	<body>
 	  <jsp:include page="profile_header.jsp"></jsp:include>
@@ -86,7 +100,7 @@
 						<h2>Edit Education Details</h2>
 					    <h6><b><jsp:expression>name</jsp:expression><span style="font-size: 12px">(<jsp:expression>email</jsp:expression>)</span></b></h6>
 						
-					 	<form action="editProfileEducation" method="post">
+					 	<form name="editEduForm" method="post">
 					 		
 					 		<input type="hidden" value="<jsp:expression>id</jsp:expression>" name="id1" />
 					 		
@@ -103,9 +117,10 @@
 							Description <br><textarea rows="5" cols="7"   name="edudesc1" class="textfield_design" ><jsp:expression>edudesc</jsp:expression>
 							</textarea><br>
 							
-							<input type="submit" value="Update Education"  class="btn btn-danger"/>
-					 	</form>		
-					 			
+							<input type="submit" value="Update Education"  class="btn btn-danger" onclick="submitFun('update')"/>
+							<input type="submit" value="Delete Education"  class="btn btn-danger" onclick="submitFun('delete')"/>
+					 	</form>	<br>	
+					 	
 					</div>
 				</div>
 			

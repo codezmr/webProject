@@ -98,7 +98,7 @@
 	   			 try{
 	   				 
 	   				 con = DbConnection.getConnect();
-	   				 PreparedStatement ps = con.prepareStatement("select * from education where email=?");
+	   				 PreparedStatement ps = con.prepareStatement("SELECT * from education where email=? ORDER BY id DESC ");
 	   				 ps.setString(1, email);
 	   				 
 	   				ResultSet rs = ps.executeQuery();
@@ -166,7 +166,7 @@
     			 try{
    				 
    				con2 = DbConnection.getConnect();
-   				PreparedStatement ps = con.prepareStatement("select * from experience where email=?");
+   				PreparedStatement ps = con.prepareStatement("select * from experience where email=? ORDER BY id DESC");
    				ps.setString(1, email);
    				 
    				ResultSet rs = ps.executeQuery();
