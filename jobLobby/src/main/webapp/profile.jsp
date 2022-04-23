@@ -13,7 +13,9 @@
 	String city   = (String) session.getAttribute("session_city");
 	String title  = (String) session.getAttribute("session_title");
 	String skills = (String) session.getAttribute("session_skills");
- 	
+	
+	String profile_pic = (String) session.getAttribute("session_profilepic");
+ 
 </jsp:scriptlet>
 <jsp:scriptlet>
 		
@@ -61,7 +63,7 @@
             		 <i class="ri-edit-2-fill" style="float: right"></i>
          		 </a>
          		 
-	   			<img alt="" src="images/profilepic.png" height="100" style="border-radius: 50%"/>
+	   			<img alt="<jsp:expression>profile_pic</jsp:expression>" src="profile_pics/<jsp:expression>profile_pic</jsp:expression>" height="100" style="border-radius: 50%"/>
 	   			 
 	   		</div>
 	   		<div class="col-md-10">

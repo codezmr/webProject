@@ -56,8 +56,14 @@ public class Register extends HttpServlet {
 			ps2.setString(3, "");
 			int i2 = ps2.executeUpdate();
 			
+			PreparedStatement ps3 = con.prepareStatement("insert int profile_pics(email, path) values(?,?)");
+			ps3.setString(1, email2);
+			ps3.setString(2, "profilepic.png");
 			
-			if(i1>0 && i2>0) {
+			int i3 = ps3.executeUpdate();
+			
+			
+			if(i1>0 && i2>0 && i3>0) {
 				
 				con.commit();
 				HttpSession session = req.getSession();
@@ -69,6 +75,8 @@ public class Register extends HttpServlet {
 				
 				session.setAttribute("session_title", "");
 				session.setAttribute("session_skills", "");
+				
+				session.setAttribute("session_profilepic", "profilepic.png");
 				
 				resp.sendRedirect("profile.jsp");
 				

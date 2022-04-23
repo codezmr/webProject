@@ -3,7 +3,8 @@
 
 <jsp:scriptlet>
     String name=(String)session.getAttribute("session_name");
-    String gender=(String)session.getAttribute("session_gender");
+	String profile_pic = (String) session.getAttribute("session_profilepic");
+
 </jsp:scriptlet>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
             </div>
 
 			<div class="col-md-4" style="text-align:center;">
-			  <img src="images/profilepic.png" height="30">
+			  <img src="profile_pics/<jsp:expression>profile_pic</jsp:expression>" height="30">
 			  <a href="profile.jsp" class="header-text-design" style=""> <jsp:expression> name.toUpperCase() </jsp:expression> </a>
 			</div>
 

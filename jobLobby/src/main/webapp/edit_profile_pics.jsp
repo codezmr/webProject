@@ -4,6 +4,8 @@
 <jsp:scriptlet>
  	String name   = (String) session.getAttribute("session_name");
  	String email   = (String) session.getAttribute("session_email");
+	String profile_pic = (String) session.getAttribute("session_profilepic");
+
 
 	
 </jsp:scriptlet>
@@ -32,7 +34,7 @@
 			<div class="col-md-8">
 				<div class="row " style="border-radius: 10px; border: 1px solid gray; box-shadow: 0 0 10px #0000ff;">
 					<div class="col-md-3" >
-						<img alt="" src="images/profilepic.png" height="150" style="border-radius: 50%"/>
+						<img alt="<jsp:expression>profile_pic</jsp:expression>" src="profile_pics/<jsp:expression>profile_pic</jsp:expression>" height="150" style="border-radius: 50%"/>
 					</div>
 					<div class="col-md-9">
 					    <h2>Edit Profile Pics</h2>
