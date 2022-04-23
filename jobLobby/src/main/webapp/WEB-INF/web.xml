@@ -124,6 +124,17 @@
 			<url-pattern>/deleteProfileEducation</url-pattern>
 		</servlet-mapping>
 		
+<!-- ======== DeleteProfileExperience Mapping ======== -->
+		<servlet>
+			<servlet-name>dpexpdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.DeleteProfileExperience</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>dpexpdemo</servlet-name>
+			<url-pattern>/deleteProfileExperience</url-pattern>
+		</servlet-mapping>
+		
 		
 		
 	</web-app>
