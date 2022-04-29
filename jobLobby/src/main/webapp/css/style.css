@@ -42,13 +42,13 @@ body{
 
 	font-size: 20px;
 	font-weight: bold;
-	color: white;
+	color: rgb(63,61,86);
 	text-decoration: none;
 	
 }
 
 .header-text-design:hover{
-	color: #eeeeee;
+	color: rgb(63,61,86);
 }
 
 .hyperlinks_design{

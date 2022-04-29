@@ -148,5 +148,17 @@
 		</servlet-mapping>
 		
 		
+<!-- ======== "UploadResume" Mapping ======== -->
+		<servlet>
+			<servlet-name>urdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.UploadResume</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>urdemo</servlet-name>
+			<url-pattern>/uploadResume</url-pattern>
+		</servlet-mapping>
+		
+		
 		
 	</web-app>

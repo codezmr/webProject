@@ -228,10 +228,40 @@
    	   	</div>
    		
    	
-   	   </div> <br><br>
+   	   </div> <br>
 
 
 <!-- =========Experience Details End============  -->
+
+
+<!-- =========Resume Details Start============  -->
+	   	
+	   	<div class="row" style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
+   		
+	   		<div class="col-md-12">
+	   			<h4> <b>Resume Details</b> 
+	  			        <a href="add_profile_experience.jsp" class="icon_style ">
+		             <i class="ri-add-fill"></i>
+		            </a>	   
+	   			 </h4>
+	   		</div>
+	   		
+	   		<div class="row">
+	   		  <div class="col-md-12">
+	   		  	<a href="upload_resume.jsp">Upload Resume</a>
+	   		  </div>
+	   		</div>
+	   		
+	   		<div class="row">
+	   		  <div class="col-md-12">
+	   		  	<a href="">Resume Builder</a>
+	   		  </div>
+	   		</div>
+	   		
+	   		
+   		</div>
+   		<br><br>
+<!-- =========Resume Details End============  -->	   	
 	   	
 	   	<div class="row" style="background-color: #ececec; border-radius: 10px">
 	   		<div class="col-md-2"></div>

@@ -17,10 +17,10 @@
 	  <div class="container-fluid" >
 	     <span><img alt="" src="images/logo.png" height="50"><span style="font-size: 26px;">JOB LOBBY</span></span>
 	     
-	    <marquee width="80%" direction="right" height="">
+	   <!--  <marquee width="80%" direction="right" height="">
 			This is a sample scrolling text that has scrolls texts to right.
 		</marquee>
-
+ -->
 	    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
