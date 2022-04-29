@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 <body>
-	<nav class="navbar navbar-light bg-light fixed-top navStyle " >
+	<nav class="navbar navbar-light  fixed-top navStyle " >
 	  <div class="container-fluid" >
 	     <span><img alt="" src="images/logo.png" height="50"><span style="font-size: 26px;">JOB LOBBY</span></span>
 	     

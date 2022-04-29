@@ -282,7 +282,7 @@
 	   		    <div class="row"  style="background-color: #ececec">
 	   		      <div class="col-md-12">
 	   		      <i class="ri-add-fill"></i>
-		   		  	<a href="build_resume.jsp"><button class="btn" style="background: gray; width: 40%" >Build Resume</button></a>
+		   		  	<a href="resume_builder_details.jsp"><button class="btn" style="background: gray; width: 40%" >Build Resume</button></a>
 		             
 	   		     </div>
 	   		    </div>
@@ -301,9 +301,7 @@
 	   			<input type="submit" value="Follow" style="border-radius: 5px"/>
 	   		</div>
 	   		<div class="col-md-2"></div>
-	   	</div>
-	   	
-	   	
+	   	</div>	   	
 	   </div>
 	   <div class="col-md-2"></div>
 	   
