@@ -239,24 +239,52 @@
 	   	<div class="row" style="border-radius: 10px; border: 1px solid gray; box-shadow: 0px 0px 3px gray;">
    		
 	   		<div class="col-md-12">
-	   			<h4> <b>Resume Details</b> 
-	  			        <a href="add_profile_experience.jsp" class="icon_style ">
-		             <i class="ri-add-fill"></i>
-		            </a>	   
-	   			 </h4>
+	   			<h4> <b>Resume Details</b></h4>
+	   			 
+	   			 <div class="row" style="background-color: #ececec">
+		   		  <div class="col-md-12">
+		   		  <i class="ri-pencil-fill"></i>
+		   		  	<a href="upload_resume.jsp"><button class="btn" style="background: gray; width: 40%">Upload Resume</button></a>
+		             
+		             <jsp:scriptlet>
+		             	
+		             	try{
+		             		
+		             		Connection con3 = DbConnection.getConnect();
+		             		PreparedStatement ps3 = con3.prepareStatement("select * from resume where email=?");
+		             		ps3.setString(1, email);
+		             		
+		             		ResultSet rs3 = ps3.executeQuery();
+		             		if(rs3.next()){
+		             			</jsp:scriptlet>
+		             			
+		             			<input type="submit" value="Download" class="btn btn-success" />
+		             			
+		             			
+		             	<jsp:scriptlet>
+		             			
+		             		}
+		             		
+		             	}catch(Exception e){
+		             		e.printStackTrace();
+		             	}
+		             
+		             </jsp:scriptlet>
+		             
+		   		  </div>
+	   		    </div>
+	   		    <br>
+	   		
+	   		    <div class="row"  style="background-color: #ececec">
+	   		      <div class="col-md-12">
+	   		      <i class="ri-add-fill"></i>
+		   		  	<a href="build_resume.jsp"><button class="btn" style="background: gray; width: 40%" >Build Resume</button></a>
+		             
+	   		     </div>
+	   		    </div>
 	   		</div>
 	   		
-	   		<div class="row">
-	   		  <div class="col-md-12">
-	   		  	<a href="upload_resume.jsp">Upload Resume</a>
-	   		  </div>
-	   		</div>
 	   		
-	   		<div class="row">
-	   		  <div class="col-md-12">
-	   		  	<a href="">Resume Builder</a>
-	   		  </div>
-	   		</div>
 	   		
 	   		
    		</div>
