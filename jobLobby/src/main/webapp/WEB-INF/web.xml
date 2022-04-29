@@ -159,6 +159,17 @@
 			<url-pattern>/uploadResume</url-pattern>
 		</servlet-mapping>
 		
+<!-- ======== "DownloadResume" Mapping ======== -->
+		<servlet>
+			<servlet-name>drdemo</servlet-name>
+			<servlet-class>com.codezmr.backend.DownloadResume</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>drdemo</servlet-name>
+			<url-pattern>/downloadResume</url-pattern>
+		</servlet-mapping>
+		
 		
 		
 	</web-app>

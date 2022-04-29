@@ -248,6 +248,7 @@
 		             
 		             <jsp:scriptlet>
 		             	
+		             String file_name= "";
 		             	try{
 		             		
 		             		Connection con3 = DbConnection.getConnect();
@@ -256,9 +257,12 @@
 		             		
 		             		ResultSet rs3 = ps3.executeQuery();
 		             		if(rs3.next()){
+		             			
+		             			file_name = rs3.getString("path");
 		             			</jsp:scriptlet>
 		             			
-		             			<input type="submit" value="Download" class="btn btn-success" />
+		             			<a href="downloadResume?fn=<jsp:expression>file_name</jsp:expression>" class="btn btn-success">Download</a>
+		             			
 		             			
 		             			
 		             	<jsp:scriptlet>
