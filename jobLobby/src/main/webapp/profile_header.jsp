@@ -15,7 +15,8 @@
    		<link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
-        <div class="row header_bg" >
+    <div class="container-fluid">
+    	  <div class="row header_bg" >
             <div class="col-md-4">
                 <img src="images/logo.png" height="50" />
                 <span class="header-text-design"> Job Portal </span>
@@ -30,5 +31,8 @@
                 <a href="Logout" class="header-text-design" > Logout </a>
             </div>
         </div>
+    
+    </div>
+      
     </body>
 </html>

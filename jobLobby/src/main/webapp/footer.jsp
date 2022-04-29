@@ -35,7 +35,7 @@
 	  	  <div class="col-md-2"></div>
 	  </div>
 	  	
-	  <div class="row black">
+	  <div class="row gray">
 	  	  <div class="col-md-2"></div>
 	  	  <div class="col-md-8 footer_rights_text">
 	  	     <span style="font-size: 13px">Copyright © 2022</span> ZAMIRUDDIN 

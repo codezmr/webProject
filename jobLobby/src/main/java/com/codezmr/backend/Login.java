@@ -71,12 +71,10 @@ public class Login extends HttpServlet{
 			}else {
 				
 				//resp.sendRedirect("login.jsp");
-				RequestDispatcher rd1 = req.getRequestDispatcher("header.jsp");
-				rd1.include(req, resp);
-				
-				RequestDispatcher rd2 = req.getRequestDispatcher("menubar.jsp");
-				rd2.include(req, resp);
-				
+				/*
+				 * RequestDispatcher rd1 = req.getRequestDispatcher("header.jsp");
+				 * rd1.include(req, resp);
+				 */
 				RequestDispatcher rd3 = req.getRequestDispatcher("loginerror.jsp");
 				rd3.include(req, resp);
 				
@@ -89,12 +87,10 @@ public class Login extends HttpServlet{
 			
 		} catch (Exception e) {
 			
-			RequestDispatcher rd1 = req.getRequestDispatcher("header.jsp");
-			rd1.include(req, resp);
-			
-			RequestDispatcher rd2 = req.getRequestDispatcher("menubar.jsp");
-			rd2.include(req, resp);
-			
+			/*
+			 * RequestDispatcher rd1 = req.getRequestDispatcher("header.jsp");
+			 * rd1.include(req, resp);
+			 */
 			RequestDispatcher rd3 = req.getRequestDispatcher("loginerror.jsp");
 			rd3.include(req, resp);
 			

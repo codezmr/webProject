@@ -87,7 +87,7 @@
 	<body>
 		<div class="container-fluid">
 			<jsp:include page="header.jsp" />
-			<jsp:include page="menubar.jsp" /><br><br>
+			<br><br>
 			
 			<div class="row">
 				<div class="col-md-3"></div>

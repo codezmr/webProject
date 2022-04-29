@@ -48,7 +48,7 @@
 	</head>
 	<body>
 	  <jsp:include page="profile_header.jsp"></jsp:include>
-	  <jsp:include page="menubar.jsp"></jsp:include>
+	 
 	  	
 	  	
 	  <div class="row"><!-- <======> Main Div End -->

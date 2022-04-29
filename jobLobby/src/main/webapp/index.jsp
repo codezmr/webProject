@@ -18,12 +18,10 @@
 	<body>
       <div class="container-fluid">
 		 <jsp:include page="header.jsp"></jsp:include>
-		 
-	     <jsp:include page="menubar.jsp"></jsp:include>
+		<br><br>
 	     
-	     <div class="row">
-	     	
-	     	  <img alt="" src="images/slide2.png">
+	     <div class="row">     	 
+	     	 <object data="svg_file/interview.svg" width="300" height="300"> </object>
 	     	
 	     </div>
 	     
@@ -54,9 +52,9 @@
 	      	
 	      	<!-- ============Display Job start ================= -->
 	      	
-	      	<div class="col-md-6" style="background-color: #f9f8f9; margin-top: 10px">
+	      	<div class="col-md-6 " >
 	      		<div class="row">
-	      			<div class="col-md-12 display_job_div">
+	      			<div class="col-md-12  display_job_style">
 	      				<b>Java Software Devloper</b> <br> 
 	      				<span>Company : CodeZMR</span><br> 
 	      				<span>0-2 Years</span> <br>
@@ -64,7 +62,7 @@
 	      				<a href="">See Full Details</a>
 	      			</div>
 	      			
-	      			<div class="col-md-12 display_job_div">
+	      			<div class="col-md-12 display_job_style">
 	      				<b>Web Devloper</b> <br>
 	      				<span>Company : CodeZMR</span> <br>
 	      				<span>0-2 Years</span> <br>
@@ -72,7 +70,7 @@
 	      				<a href="">See Full Details</a>
 	      			</div>
 	      			
-	      			<div class="col-md-12 display_job_div">
+	      			<div class="col-md-12 display_job_style">
 	      				<b>Spring Devloper</b> <br>
 	      				<span>Company : CodeZMR</span> <br>
 	      				<span>0-2 Years</span> <br>
@@ -80,7 +78,7 @@
 	      				<a href="">See Full Details</a>
 	      			</div>
 	      			
-	      			<div class="col-md-12 display_job_div">
+	      			<div class="col-md-12 display_job_style">
 	      				<b>Cloud Engineer</b> <br>
 	      				<span>Company : CodeZMR</span> <br>
 	      				<span>0-2 Years</span> <br>
@@ -94,11 +92,21 @@
 	      	
 	      	<div class="col-md-3">
 	      		<ul>
-	      			<li><a href=""> IBM </a></li>
-	      			<li><a href=""> Wipro </a></li>
-	      			<li><a href=""> Uber </a></li>
-	      			<li><a href=""> Flipkart </a></li>
-	      			<li><a href=""> Infosys </a></li>
+	      			<li>
+	      				<a href="" class="company_name"> <img alt="ibm logo" src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" height="50" style="border-radius: 100%; margin-right: 5px">IBM </a>
+	      			</li>
+	      			<li>
+	      				<a href="" class="company_name"> <img alt="ibm logo" src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" height="50" style="border-radius: 100%; margin-right: 5px">IBM </a>
+	      			</li>
+	      			<li>
+	      				<a href="" class="company_name"> <img alt="ibm logo" src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" height="50" style="border-radius: 100%; margin-right: 5px">IBM </a>
+	      			</li>
+	      			<li>
+	      				<a href="" class="company_name"> <img alt="ibm logo" src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" height="50" style="border-radius: 100%; margin-right: 5px">IBM </a>
+	      			</li>
+	      			<li>
+	      				<a href="" class="company_name"> <img alt="ibm logo" src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" height="50" style="border-radius: 100%; margin-right: 5px">IBM </a>
+	      			</li>
 	      		</ul>
 	      	</div>
 	      </div>
